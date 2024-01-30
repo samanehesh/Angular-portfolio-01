@@ -11,12 +11,15 @@
    display: grid;
    grid-template-rows: 100px 1fr 100px;
 }
+
 header{
     grid-row: 1;
 }
+
 main{
     grid-row: 2;
 }
+
 footer{
     grid-row: 3;
     justify-self: right;
@@ -27,6 +30,9 @@ footer{
     display: none;
 }
 
-// .active{
-//     background-color: rgb(125, 134, 134);
-// }
+a {
+    color: black; /* Set the desired default font color */
+}
+.active{
+    background-color: rgb(125, 134, 134);
+}

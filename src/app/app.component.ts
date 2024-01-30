@@ -230,6 +230,8 @@ export class AppComponent {
       project.tags && project.tags.some(projectTag => projectTag.name === tag)
     );
     console.log(filteredProjects);
+    // this.tagFilter = tag;
+
   }
 
   clearFilters(){
