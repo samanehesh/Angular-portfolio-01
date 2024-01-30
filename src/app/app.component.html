@@ -1,41 +1,50 @@
+  <div [ngClass]="'bodyWrapper'">
+    <header>
+      <h1>{{name}} {{title}}</h1>
+      
+    </header>
+    <main [ngClass]="'mainWrapper'">
+      <section >
+        <div style="width: 100%;" *ngFor="let project of projects" [class.hidden]="categoryFilter && project.category?.id != categoryFilter.id">
+          <h2>{{ project.title }}</h2>
+          <p>{{ project.excerpt }}</p>
+          <p *ngIf="project.category && project.category.name">
+            Category: <a href="#" (click)="setCategoryFilter(project.category)">{{ project.category.name }}</a>
+            
+            <p *ngIf="project.tags && project.tags.length > 0">
+              Tags:
+              <span *ngFor="let tag of project.tags">
+                <a href="#" (click)="setTagFilter(tag.name)">{{ tag.name }}</a>,
+              </span>
+            </p>
+        </div>
+      </section>
+    
+    
+    <section >
+      <p *ngIf="categoryFilter">Filter:</p>
+      <button *ngIf="categoryFilter" (click)="clearFilters()">{{categoryFilter.name}} 🗑️</button>
+    
+      <p>Categories</p>
+      <div *ngFor="let category of categories" [class.active]="categoryFilter && category.id == categoryFilter.id">
+        <a href="#" (click)="setCategoryFilter(category)">{{ category.name }}</a>
+      </div>
+    
+      <p>Tags</p>
+      <div *ngFor="let tag of tags" [class.active]="tagFilter && tag.id == tagFilter.id">
+        <a href="#" (click)="setTagFilter(tag.name)">{{ tag.name }}</a>
+      </div>
+    </section>
+    
+    </main>
+    <footer>
+      &copy; {{name}} - {{year}}
+    </footer>
+    
 
-<header>
-  <h1>{{name}} {{title}}</h1>
+  </div>
   
-</header>
-<main [ngClass]="'mainWrapper'">
-  <section [ngClass]="'mainWrapper'">
-    <div *ngFor="let project of projects" [class.hidden]="categoryFilter && project.category?.id != categoryFilter.id">
-      <h2>{{ project.title }}</h2>
-      <p>{{ project.excerpt }}</p>
-      <p *ngIf="project.category && project.category.name">
-        Category: <a href="#" (click)="setCategoryFilter(project.category)">{{ project.category.name }}</a>
-        
-        <p *ngIf="project.tags && project.tags.length > 0">
-          Tags:
-          <span *ngFor="let tag of project.tags">
-            <a href="#" (click)="setTagFilter(tag.name)">{{ tag.name }}</a>,
-          </span>
-        </p>
-    </div>
-  </section>
 
+  
+  
 
-<section [style.backgroundColor]="grey" [style.width]="'10%'" [style.padding]="'10px'" [style.borderRadius]="'5px'" [style.textAlign]="'right'">
-  <button *ngIf="categoryFilter" (click)="clearFilters()">Clear Filters</button>
-
-  <p>Categories</p>
-  <div *ngFor="let category of categories">
-    <a href="#" (click)="setCategoryFilter(category)">{{ category.name }}</a>
-  </div>
-
-  <p>Tags</p>
-  <div *ngFor="let tag of tags">
-    <a href="#" (click)="setTagFilter(tag.name)">{{ tag.name }}</a>
-  </div>
-</section>
-
-</main>
-<footer>
-  &copy; {{name}} - {{year}}
-</footer>

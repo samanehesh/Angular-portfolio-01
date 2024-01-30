@@ -215,18 +215,15 @@ export class AppComponent {
   public tags = TAGS;
   public categories = CATEGORIES;
   categoryFilter : Category | undefined;
+  tagFilter: Tag |undefined
 
 
   setCategoryFilter(category: Category) {
-    console.log('Category clicked:', category);
-    // let filteredProjects = [];
     this.categoryFilter = category;
-    // filteredProjects = PROJECTS.filter(project => project.category && project.category.name === category);
-    // console.log(filteredProjects);
   }
 
 
-  setTagFilter(tag: any): void {
+  setTagFilter(tag: string) {
     console.log('tag clicked:', tag);
     let filteredProjects = [];
     filteredProjects = PROJECTS.filter(project =>
@@ -237,7 +234,9 @@ export class AppComponent {
 
   clearFilters(){
     // this.filteredProjects = this.projects.slice(); // Copy all projects back to filteredProjects
-this.categoryFilter = undefined;
+    this.categoryFilter = undefined;
+    this.tagFilter = undefined;
+
     // let projects = []
     // projects = PROJECTS.slice(); // Copy all projects back to filteredProjects
     // <button (click)="clearFilters()">Clear Filters</button>
