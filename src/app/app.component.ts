@@ -206,7 +206,6 @@ export class AppComponent {
   title = 'Portfolio';
   name = 'Samaneh';
   year = new Date().getFullYear();
-  grey = '#CCCCCC';
 
   public projects = PROJECTS;
   public filteredProjects = PROJECTS;
