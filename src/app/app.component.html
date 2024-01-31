@@ -5,6 +5,7 @@
     </header>
     <main [ngClass]="'mainWrapper'">
       <section >
+        <!-- set the class hidden if the category does not match the filter -->
         <div style="width: 100%;" *ngFor="let project of projects" [class.hidden]="categoryFilter && project.category?.id != categoryFilter.id">
           <h2>{{ project.title }}</h2>
           <p>{{ project.excerpt }}</p>
@@ -14,7 +15,7 @@
             <p *ngIf="project.tags && project.tags.length > 0">
               Tags:
               <span *ngFor="let tag of project.tags">
-                <a href="#" (click)="setTagFilter(tag.name)">{{ tag.name }}</a>,
+                <a href="#" (click)="setTagFilter(tag.name)">{{ tag.name }}</a> |
               </span>
             </p>
         </div>
@@ -26,11 +27,13 @@
       <button *ngIf="categoryFilter" (click)="clearFilters()">{{categoryFilter.name}} 🗑️</button>
     
       <p>Categories</p>
+      <!-- loop through categories and set the class active to the selected category -->
       <div *ngFor="let category of categories" [class.active]="categoryFilter && category.id == categoryFilter.id">
         <a href="#" (click)="setCategoryFilter(category)">{{ category.name }}</a>
       </div>
     
       <p>Tags</p>
+      <!-- loop through tags and set the class active to the selected tag -->
       <div *ngFor="let tag of tags" [class.active]="tagFilter && tag.id == tagFilter.id">
         <a href="#" (click)="setTagFilter(tag.name)">{{ tag.name }}</a>
       </div>

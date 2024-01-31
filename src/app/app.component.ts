@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
 
 export class Category {
   id!: number;
@@ -15,7 +14,6 @@ const CATEGORIES: Category[] = [
   { "id": 3, "slug": "full-stack", "name": "Full Stack" }
 ]
 
-
 export class Tag {
   id!: number;
   name!: string;
@@ -23,9 +21,15 @@ export class Tag {
 }
 
 const TAGS: Tag[] = [
-  {"id":1,"name":"Laravel","slug":"laravel"},
-  {"id":2,"name":"PHP","slug":"php"},
-  {"id":3,"name":"Docker","slug":"docker"}
+  {"id":1,"name":"SQL","slug":"sql"},
+  {"id":2,"name":"Javascript","slug":"javascript"},
+  {"id":3,"name":"CSS","slug":"css"},
+  {"id":4,"name":"Node.js","slug":"node.js"},
+  {"id":5,"name":"React","slug":"react"},
+  {"id":6,"name":"HTML","slug":"html"},
+  {"id":7,"name":"C#","slug":"csharp"},
+  {"id":8,"name":"Mongo","slug":"mongo"},
+  {"id":9,"name":"Angular","slug":"angular"},
 ]
 
 export class Project {
@@ -45,13 +49,109 @@ export class Project {
   'tags': Tag[] | undefined;
 }
 
+// Array of SSD projects
 const PROJECTS: Project[] = [
   {
     "id": 1,
-    "title": "Portfolio Showcase",
-    "slug": "portfolio-showcase",
-    "excerpt": "A vitae eius numquam amet. Fuga quo illum ipsam odio et.",
-    "body": "<p>Ea error fugit cumque non exercitationem non. Molestias et deserunt ad suscipit quis. Rerum voluptatem saepe aperiam assumenda.</p></p>Saepe tenetur nihil quia quidem nemo. Sequi similique iure ullam facilis. Molestias occaecati veritatis provident.</p></p>Adipisci expedita distinctio libero ea. Nulla quam minus beatae voluptate laudantium quis eos. Fugit ullam ut perferendis quia dignissimos. Blanditiis iste et voluptas magni. Voluptate eos qui quaerat iure eius est aut.</p></p>Quisquam est voluptatum aut cupiditate molestias. Explicabo consequuntur nostrum et et non neque. Consequatur sed est sed blanditiis voluptatem nihil.</p>",
+    "title": "React Calculator",
+    "slug": "React Calculator",
+    "excerpt": "React Calculator where math meets React for seamless and user-friendly numerical computations.",
+    "body": "React Calculator is interactive user interface for performing mathematical calculations. Integrating state management within React, a calculator project can efficiently handle user input, update display elements, and execute precise mathematical operations.",
+    "url": null,
+    "published_date": null,
+    "image": null,
+    "thumb": null,
+    "category_id": 2,
+    "created_at": "2023-02-23T22:31:23.000000Z",
+    "updated_at": "2023-02-23T22:31:23.000000Z",
+    "category": { "id": 2, "slug": "front-end", "name": "Front End" },
+    "tags": [
+      {"id":5,"name":"React","slug":"react"},
+      {"id":3,"name":"CSS","slug":"css"}
+    ]
+  },
+  {
+    "id": 2,
+    "title": "SSD Yearbook",
+    "slug": "ssd-yearbook",
+    "excerpt": "Embarking on an immersive Angula, SSD Yearbook serves as a centralized showcase for projects accomplished within the software development program.",
+    "body": "The SSD Yearbook serves as a dynamic portfolio with filtering functionality, which offers a detailed overview of each project's objectives, technologies used, and notable achievements.",
+    "url": null,
+    "published_date": null,
+    "image": null,
+    "thumb": null,
+    "category_id": 2,
+    "created_at": "2023-02-23T22:31:23.000000Z",
+    "updated_at": "2023-02-23T22:31:23.000000Z",
+    "category": { "id": 2, "slug": "front-end", "name": "Front End" },
+    "tags": [
+      {"id":9,"name":"Angular","slug":"angular"},
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Movie Mania",
+    "slug": "react-movie-mania",
+    "excerpt": "Exploring Movies with TMDB and Unleashing the Magic of React for an Immersive and Enchanting Movie Experience.",
+    "body": "Movie project is created with React and Redux. Established the Redux store, the states are available globally and action efficiently. Axios is integrated to Fetch and facilitate API requests to TMDB and populate the Redux store. React Router is implemented for navigation between different movie views while ensuring a cohesive flow within the application. Visual aesthetics is enhanced the with CSS styles.",
+    "url": null,
+    "published_date": null,
+    "image": null,
+    "thumb": null,
+    "category_id": 2,
+    "created_at": "2023-02-23T22:31:23.000000Z",
+    "updated_at": "2023-02-23T22:31:23.000000Z",
+    "category": { "id": 2, "slug": "front-end", "name": "Front End" },
+    "tags": [
+      {"id":5,"name":"React","slug":"react"},
+      {"id":3,"name":"CSS","slug":"css"}
+    ]
+  },
+  {
+    "id": 4,
+    "title": "Bubble Tea Website",
+    "slug": "bubble-tea-website",
+    "excerpt": "Experience the world of Bubble Tea like never before with our captivating website, meticulously crafted using C# and SQL.",
+    "body": "Explore a diverse menu of tantalizing flavors, customize desired blend, and indulge in a seamless ordering experience as the SQL database ensures accurate and efficient processing of the Bubble Tea preferences, bringing a taste of innovation to customers.",
+    "url": null,
+    "published_date": null,
+    "image": null,
+    "thumb": null,
+    "category_id": 2,
+    "created_at": "2023-02-23T22:31:23.000000Z",
+    "updated_at": "2023-02-23T22:31:23.000000Z",
+    "category":   { "id": 3, "slug": "full-stack", "name": "Full Stack" },
+    "tags": [
+      {"id":1,"name":"SQL","slug":"sql"},
+      {"id":7,"name":"C#","slug":"csharp"},
+    ]
+  },
+  {
+    "id": 5,
+    "title": "JavaScript Game",
+    "slug": "javascript-game",
+    "excerpt": "Come Explore Hi-Low game with the use of Javascript and predict whether the next randomly generated number will be higher or lower.",
+    "body": "The Hi-Low World game is a one or two player game with three difficulty range (Easy 1-1024, Medium 1-2048, Hard 1-4096). The objective of this game is to guess a secret number in as few guesses as possible. The secret number is generated within the predefined range by computer in one player mode or entered by the other player.",
+    "url": null,
+    "published_date": null,
+    "image": null,
+    "thumb": null,
+    "category_id": 2,
+    "created_at": "2023-02-23T22:31:23.000000Z",
+    "updated_at": "2023-02-23T22:31:23.000000Z",
+    "category": { "id": 2, "slug": "front-end", "name": "Front End" },
+    "tags": [
+      {"id":2,"name":"Javascript","slug":"javascript"},
+      {"id":3,"name":"CSS","slug":"css"},
+      {"id":6,"name":"HTML","slug":"html"}
+    ]
+  },
+  {
+    "id": 6,
+    "title": "Express Billing",
+    "slug": "express-billing",
+    "excerpt": "Powered by Node.js and Express, businesses efficiently publish bills for customers while ensuring secure user authentication through Passport.",
+    "body": "Leveraging the efficiency and flexibility of MongoDB, the application stores and manages data with ease, ensuring a scalable and reliable foundation for billing information. This dynamic combination of Node.js, Express, Passport, and MongoDB creates a comprehensive platform, providing businesses and customers with a feature-rich experience in accessing, managing, and interacting with billing data, fostering efficiency and security in every transaction.",
     "url": null,
     "published_date": null,
     "image": null,
@@ -59,31 +159,19 @@ const PROJECTS: Project[] = [
     "category_id": 3,
     "created_at": "2023-02-23T22:31:23.000000Z",
     "updated_at": "2023-02-23T22:31:23.000000Z",
-    "category": { "id": 3, "slug": "full-stack", "name": "Full Stack" },
+    "category": { "id": 3, "slug": "full-stack", "name": "Full Stack" }
+    ,
     "tags": [
-      {
-        "id": 1,
-        "name": "Laravel",
-        "slug": "laravel",
-      },
-      {
-        "id": 2,
-        "name": "PHP",
-        "slug": "php",
-      },
-      {
-        "id": 3,
-        "name": "Docker",
-        "slug": "docker",
-      }
+      {"id":4,"name":"Node.js","slug":"node.js"},
+      {"id":8,"name":"Mongo","slug":"mongo"},
     ]
   },
   {
-    "id": 2,
-    "title": "SSD Yearbook",
-    "slug": "ssd-yearbook",
-    "excerpt": "Nostrum voluptatem est esse culpa amet nemo. Earum ea rerum id repudiandae esse quasi et.",
-    "body": "<p>Velit perspiciatis tenetur aspernatur cum qui facilis. Quos tempora omnis harum corporis. Cumque quisquam ea cumque aut sed eius. Ut mollitia architecto eaque tempora ab sit alias.</p></p>Recusandae id non sunt voluptatem. Aut et ab et nihil. At unde recusandae ea molestias dignissimos quisquam molestias.</p></p>Dolore qui recusandae non. Non omnis vel similique ullam odit maiores. Libero in consequatur quia dolores. Unde aliquam hic mollitia.</p>",
+    "id": 7,
+    "title": "Car Ownership Database ",
+    "slug": "car-ownership-database ",
+    "excerpt": "The car ownership database utilizing SQL Server and C# seamlessly manage and organize essential information related to vehicle ownership for enhanced efficiency and data integrity.",
+    "body": "The car ownership database is a console application that interacts with the Car Ownership Database using Entity Framework. The application provides menu options for listing all cars, listing car details, adding a new car, updating car information, and deleting a car.",
     "url": null,
     "published_date": null,
     "image": null,
@@ -91,95 +179,18 @@ const PROJECTS: Project[] = [
     "category_id": 1,
     "created_at": "2023-02-23T22:31:23.000000Z",
     "updated_at": "2023-02-23T22:31:23.000000Z",
-    "category": { "id": 1, "slug": "back-end", "name": "Back End" },
-    "tags": []
-  },
-  {
-    "id": 3,
-    "title": "Movie Mania",
-    "slug": "movie-mania",
-    "excerpt": "Et autem hic voluptatibus qui ipsa est. Consequatur tempore nihil et laboriosam aut impedit.",
-    "body": "<p>Numquam voluptates quod doloremque sed. Odio ea in totam veritatis consequuntur ad cupiditate. Adipisci et qui dolor architecto dicta asperiores a. Consequuntur est impedit explicabo ut iste aperiam error deleniti.</p></p>Consequatur sint quia error exercitationem iusto doloremque non placeat. Ut ea molestiae aut. Ab et dolorum ab sit omnis sit. Consequatur ipsam culpa repellat voluptas.</p></p>Facere rem eum doloribus deleniti repellat. Ut quia amet incidunt. Eos et culpa reiciendis ipsum et molestiae omnis. Cumque reprehenderit delectus eum alias consequatur quibusdam.</p></p>Quod minus aut est quis omnis magnam. Tempora ad ab quia sed est optio distinctio. Ut vel et dolor sint est iure.</p></p>Suscipit dolores omnis quia nihil. Deleniti totam rerum cupiditate. Odio maiores consequatur fuga perspiciatis. Commodi doloremque exercitationem neque eius. Nulla cumque et doloribus ab consectetur voluptatem explicabo.</p>",
-    "url": null,
-    "published_date": null,
-    "image": null,
-    "thumb": null,
-    "category_id": null,
-    "created_at": "2023-02-23T22:31:23.000000Z",
-    "updated_at": "2023-02-23T22:31:23.000000Z",
-    "category": null,
-    "tags": []
-  },
-  {
-    "id": 4,
-    "title": "News Site Homepage",
-    "slug": "news-site-homepage",
-    "excerpt": "Placeat doloremque sed doloribus debitis quia omnis quaerat alias. Odio et qui enim eveniet ratione ducimus.",
-    "body": "<p>Ut facere cumque hic corrupti animi. Dolore sequi fugit sed quisquam ratione repellat eaque. Eos autem perspiciatis ipsum voluptas voluptas.</p></p>Cum illum iste quia et minima ipsam non. Quas nobis et laborum nihil animi. Quia corrupti et saepe est consectetur ducimus dolores.</p></p>Voluptas rerum sed voluptates ea aliquid. Laboriosam in quisquam tempore sed saepe totam.</p>",
-    "url": null,
-    "published_date": null,
-    "image": null,
-    "thumb": null,
-    "category_id": 2,
-    "created_at": "2023-02-23T22:31:23.000000Z",
-    "updated_at": "2023-02-23T22:31:23.000000Z",
-    "category": { "id": 2, "slug": "front-end", "name": "Front End" },
-    "tags": []
-  },
-  {
-    "id": 5,
-    "title": "JavaScript Game",
-    "slug": "javascript-game",
-    "excerpt": "Nostrum dolores dignissimos qui omnis rerum blanditiis. Tenetur et aut eum est.",
-    "body": "<p>Sit quae laborum sunt dolorum voluptatem et ipsam. Et ipsum animi exercitationem est omnis.</p></p>Autem autem est non voluptatibus. A neque veniam voluptas quo vitae adipisci odio. Vitae quo ea atque molestiae dolorem in.</p></p>Similique adipisci eum qui voluptate repudiandae tempore corporis. At iste earum totam minima dignissimos odio sed animi. Rerum exercitationem est est expedita quae. Mollitia minima ut necessitatibus est dolores rem. Ducimus sit consequatur eos quia omnis.</p>",
-    "url": null,
-    "published_date": null,
-    "image": null,
-    "thumb": null,
-    "category_id": 2,
-    "created_at": "2023-02-23T22:31:23.000000Z",
-    "updated_at": "2023-02-23T22:31:23.000000Z",
-    "category": { "id": 2, "slug": "front-end", "name": "Front End" },
-    "tags": []
-  },
-  {
-    "id": 6,
-    "title": "iOS App",
-    "slug": "ios-app",
-    "excerpt": "Qui dolores et velit. Quo nostrum laboriosam est in possimus accusantium.",
-    "body": "<p>Ut consequatur modi voluptates officia inventore consequatur. Molestiae possimus voluptate nihil voluptatem et harum sapiente. Aut voluptas possimus aspernatur beatae omnis ad et. Non non ipsum laborum quisquam et.</p></p>Ullam ab velit at non. Deserunt ut ea veritatis sapiente aliquid eos quia et. Commodi dolore esse voluptatem delectus.</p></p>Velit velit numquam cupiditate quis. Quos et veniam nobis omnis.</p>",
-    "url": null,
-    "published_date": null,
-    "image": null,
-    "thumb": null,
-    "category_id": null,
-    "created_at": "2023-02-23T22:31:23.000000Z",
-    "updated_at": "2023-02-23T22:31:23.000000Z",
-    "category": null,
-    "tags": []
-  },
-  {
-    "id": 7,
-    "title": "Android App",
-    "slug": "android-app",
-    "excerpt": "Omnis odio repudiandae cupiditate consequatur facilis et rem. Quas dolor ab quo aperiam.",
-    "body": "<p>Est et quia ipsam odio voluptatem fuga ducimus. Non illo vitae sed commodi ut. Tempora commodi tenetur velit incidunt ullam.</p></p>Id cum saepe asperiores voluptas quidem quos. Ipsum facilis illum voluptate asperiores.</p></p>Mollitia reprehenderit autem molestias. Sed quia officia velit non sunt. Esse delectus consequatur minus laboriosam laudantium alias. Qui commodi est assumenda accusamus.</p>",
-    "url": null,
-    "published_date": null,
-    "image": null,
-    "thumb": null,
-    "category_id": null,
-    "created_at": "2023-02-23T22:31:23.000000Z",
-    "updated_at": "2023-02-23T22:31:23.000000Z",
-    "category": null,
-    "tags": []
+    "category":   { "id": 1, "slug": "back-end", "name": "Back End" },
+    "tags": [
+      {"id":1,"name":"SQL","slug":"sql"},
+      {"id":7,"name":"C#","slug":"csharp"},
+    ]
   },
   {
     "id": 8,
     "title": "Industry Project",
     "slug": "industry-project",
-    "excerpt": "Iure ratione nemo cumque. Aliquid esse soluta provident consequatur velit ut architecto.",
-    "body": "<p>Deleniti rerum labore sint quibusdam. Expedita ea reiciendis molestiae et amet repellendus autem voluptates. Aut qui voluptas ullam suscipit necessitatibus libero veritatis.</p></p>Pariatur voluptatum quia at quod. Quod quisquam qui commodi. Autem quae sequi minus iste.</p></p>Id atque magnam dolorem minus omnis aut accusantium. Et maxime blanditiis asperiores itaque sit qui culpa est. Consequatur esse excepturi suscipit ea et est corporis. Iure earum dolorum pariatur id.</p></p>Quia dicta quis libero eos odio expedita. In blanditiis doloribus natus ullam expedita est. Sed voluptatibus rerum distinctio voluptate assumenda vel cum.</p></p>Provident ut ipsam minus eos. Quaerat est tempore architecto sint. Vitae deserunt ullam corrupti asperiores sit quia facilis.</p></p>Quia minus ut qui cum odio error dolor quia. Rerum minus molestias voluptatum et eius consequatur. Autem quis et molestiae quidem provident voluptas fuga vel. Voluptatibus quas accusantium doloremque dolores deleniti eum.</p>",
+    "excerpt": "Coming soon",
+    "body": "Coming soon",
     "url": null,
     "published_date": null,
     "image": null,
@@ -192,13 +203,10 @@ const PROJECTS: Project[] = [
   }
 ]
 
-
-
-
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, FormsModule],
+  imports: [CommonModule, RouterOutlet],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss', './app.mainStyle.scss'],
 })
@@ -209,19 +217,18 @@ export class AppComponent {
 
   public projects = PROJECTS;
   public filteredProjects = PROJECTS;
-
-  
   public tags = TAGS;
   public categories = CATEGORIES;
+
   categoryFilter : Category | undefined;
   tagFilter: Tag |undefined
 
-
+// this function set the category filter
   setCategoryFilter(category: Category) {
     this.categoryFilter = category;
   }
 
-
+// this function set the tag filter
   setTagFilter(tag: string) {
     console.log('tag clicked:', tag);
     let filteredProjects = [];
@@ -229,18 +236,13 @@ export class AppComponent {
       project.tags && project.tags.some(projectTag => projectTag.name === tag)
     );
     console.log(filteredProjects);
-    // this.tagFilter = tag;
-
   }
 
+// this function clears tag and category filter
   clearFilters(){
-    // this.filteredProjects = this.projects.slice(); // Copy all projects back to filteredProjects
     this.categoryFilter = undefined;
     this.tagFilter = undefined;
 
-    // let projects = []
-    // projects = PROJECTS.slice(); // Copy all projects back to filteredProjects
-    // <button (click)="clearFilters()">Clear Filters</button>
   }
 
 }
