@@ -16,7 +16,7 @@ import {ProjectFilterPipe} from './pipes/project-filter.pipe'
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet,ProjectFilterPipe,ProjectsComponent,CategoriesComponent,TagsComponent],
+  imports: [CommonModule, RouterOutlet,ProjectFilterPipe,ProjectsComponent,CategoriesComponent,TagsComponent,ProjectComponent],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })

@@ -4,7 +4,7 @@
     
   </header>
   <main [ngClass]="'mainWrapper'">
-    <section >
+    <section *ngIf="!selectedProject">
       <app-projects id = "projects"
       [categoryFilter]="categoryFilter"
       (newCategoryFilterEvent)="setCategoryFilter($event)"
@@ -12,6 +12,11 @@
       (newTagFilterEvent)="setTagFilter($event)"
       (newSelectedProjectEvent)="setSelectedProject($event)">
       </app-projects>
+    </section>
+    
+    <section id="project" *ngIf="selectedProject">
+      <button (click)="clearSelectedProject()">Back</button>
+      <app-project [project]="selectedProject"></app-project>
     </section>
   
   

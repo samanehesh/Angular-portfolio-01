@@ -1,11 +1,8 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProjectFilterPipe } from '../../pipes/project-filter.pipe';
-
-
 import { ProjectService } from '../../services/project.service';
 import { Project } from '../../model/project';
-
 import { Category } from '../../model/category';
 import { Tag } from '../../model/tag';
 
@@ -42,7 +39,6 @@ export class ProjectsComponent {
   setSelectedProject(project: Project): void {
     this.newSelectedProjectEvent.emit(project);
   }
-  
 
   setCategoryFilter(category: Category) {
     this.categoryFilter = category;
@@ -58,9 +54,5 @@ export class ProjectsComponent {
     this.categoryFilter = undefined;
     this.tagFilter = undefined;
   }
-
-
-
-  
 
 }
