@@ -1,0 +1,47 @@
+
+a {
+    color: black; /* Set the desired default font color */
+}
+article{
+    border: 1px solid rgb(139, 136, 136);
+    margin: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 14px 13px 10px rgb(21 21 21 / 10%);
+    height: 550px;
+
+    &.hidden {
+        display: none;
+    }
+
+}
+
+// .imageSection{
+//     max-height: 200px;
+//     overflow: hidden;
+// }
+
+.oneProject{
+    display: grid;
+    grid-template-columns: 1;
+    grid-template-rows: 2fr  1fr 1fr;
+}
+
+img{
+    max-width: 100%;
+    width: 100%;
+    border-radius: 5px;
+    // height: auto;
+    // overflow: hidden;
+    max-height: 300px;
+    // height: 100%;
+
+    // max-width: 100%;
+    height: auto;
+}
+footer{
+    margin-top: 10px;
+    // align-self: end; /* Aligns the item to the bottom */
+    justify-self: start;
+}
+

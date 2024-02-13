@@ -1,0 +1,24 @@
+<article class = "oneProject">
+  <section class="project-card">
+      <img
+        *ngIf="project?.image"
+        [src]="'assets/images/' + project?.image"
+        alt="Image of {{ project?.title }}"
+      />
+      <div>
+        <h2>{{ project?.title | uppercase }}</h2>
+        <div>{{ project?.excerpt }}</div>
+      </div>
+  </section>
+  <footer>
+      <div *ngIf="project?.category">
+        Category: <span>{{ project?.category?.name }}</span>
+      </div>
+      <div *ngIf="project?.tags?.length">
+        Tags:
+        <span *ngFor="let tag of project?.tags">
+          {{ tag.name }}
+        </span>
+      </div>
+  </footer>
+</article>

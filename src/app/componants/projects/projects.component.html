@@ -1,0 +1,31 @@
+<article class = "oneProject" 
+  *ngFor="let project of projects | projectFilter : tagFilter"
+  [class.hidden]="(categoryFilter && project.category?.id != categoryFilter.id)"
+  (click)="setSelectedProject(project)"
+  >
+  <section class ="imageSection">
+    <img
+      *ngIf="project.image"
+      [src]="'assets/images/' + project.image"
+      alt="Image of {{ project.title }}"
+    />
+  </section>
+  <section>
+    <h2>{{ project.title | uppercase }}</h2>
+    <div>{{ project.excerpt }}</div>
+  </section>
+  
+  <footer>
+    <div *ngIf="project.category && project.category.name">
+      Category: <a href="#" (click)="setCategoryFilter(project.category)">{{ project.category.name }}</a>
+    </div>
+    <div *ngIf="project.tags && project.tags.length > 0">
+      Tags:
+      <span *ngFor="let tag of project.tags">
+        <a href="#" (click)="setTagFilter(tag)">{{ tag.name }}</a> |
+      </span>
+    </div>
+  </footer>
+
+</article>
+
