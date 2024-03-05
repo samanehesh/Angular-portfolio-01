@@ -1,0 +1,56 @@
+<div id = "allProjects">
+  <!-- <article class = "oneProject" 
+  *ngFor="let project of projects | projectFilter : tagFilter"
+  [class.hidden]="(categoryFilter && project.category?.id != categoryFilter.id)"
+  (click)="setSelectedProject(project)"
+
+  > -->
+  <article class = "oneProject" 
+  *ngFor="let project of projects"
+  >
+  <!-- <a href="/projects/{{ project.id}}">Categories</a> -->
+    <!-- <a href="/projects/{{ project.slug}}"> -->
+    <section>
+      <section class ="imageSection">
+        <img
+          *ngIf="project.image"
+          [src]="'assets/images/' + project.image"
+          alt="Image of {{ project.title }}"
+        />
+      </section>
+      <section>
+        <a href="/projects/{{ project.id }}"><h2>{{ project.title | uppercase }}</h2></a>
+        <div>{{ project.excerpt }}</div>
+      </section>
+    </section>
+    <!-- </a> -->
+  
+  <footer>
+    <div *ngIf="project.category && project.category.name">
+      Category: 
+      <a href = 
+      "/projects/categories/{{project.category.slug}}"
+
+    >
+    {{ project.category.name }}
+  </a>
+      <!-- <a href="#" (click)="setCategoryFilter(project.category)">{{ project.category.name }}</a> -->
+    </div>
+    <div *ngIf="project.tags && project.tags.length > 0">
+      Tags:
+      <span *ngFor="let tag of project.tags">
+        <!-- <a href="#" (click)="setTagFilter(tag)">{{ tag.name }}</a> | -->
+        <a href = 
+        "/projects/tags/{{tag.slug}}"
+  
+      >
+      {{ tag.name }}
+    </a>
+      </span>
+    </div>
+  </footer>
+
+  </article>
+</div>
+
+

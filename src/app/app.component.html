@@ -1,53 +1,108 @@
-  <div [ngClass]="'bodyWrapper'">
-    <header>
-      <h1>{{name}} {{title}}</h1>
-      
-    </header>
-    <main [ngClass]="'mainWrapper'">
-      <section >
-        <!-- set the class hidden if the category does not match the filter -->
-        <div style="width: 100%;" *ngFor="let project of projects" [class.hidden]="categoryFilter && project.category?.id != categoryFilter.id">
-          <h2>{{ project.title }}</h2>
-          <p>{{ project.excerpt }}</p>
-          <p *ngIf="project.category && project.category.name">
-            Category: <a href="#" (click)="setCategoryFilter(project.category)">{{ project.category.name }}</a>
-            
-            <p *ngIf="project.tags && project.tags.length > 0">
-              Tags:
-              <span *ngFor="let tag of project.tags">
-                <a href="#" (click)="setTagFilter(tag.name)">{{ tag.name }}</a> |
-              </span>
-            </p>
-        </div>
-      </section>
-    
-    
-    <section >
-      <p *ngIf="categoryFilter">Filter:</p>
-      <button *ngIf="categoryFilter" (click)="clearFilters()">{{categoryFilter.name}} 🗑️</button>
-    
-      <p>Categories</p>
-      <!-- loop through categories and set the class active to the selected category -->
-      <div *ngFor="let category of categories" [class.active]="categoryFilter && category.id == categoryFilter.id">
-        <a href="#" (click)="setCategoryFilter(category)">{{ category.name }}</a>
-      </div>
-    
-      <p>Tags</p>
-      <!-- loop through tags and set the class active to the selected tag -->
-      <div *ngFor="let tag of tags" [class.active]="tagFilter && tag.id == tagFilter.id">
-        <a href="#" (click)="setTagFilter(tag.name)">{{ tag.name }}</a>
-      </div>
-    </section>
-    
-    </main>
-    <footer>
-      &copy; {{name}} - {{year}}
-    </footer>
-    
-
+<div [ngClass]="'bodyWrapper'">
+<header>
+  <div>
+    <h1>{{name}} {{title }}</h1>
   </div>
-  
+  <nav>
+      <ul>
+        <li>
+          <a
+            routerLink="/"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            ariaCurrentWhenActive="page"
+            >Home</a
+          >
+        </li>
+        <li>
+          <a
+            routerLink="/projects"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            ariaCurrentWhenActive="page"
+            >Projects</a
+          >
+        </li>
+        <li>
+          <a
+            routerLink="projects/categories"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            ariaCurrentWhenActive="page"
+            >Categories</a
+          >
+        </li>
+        <li>
+          <a
+            routerLink="projects/tags"
+            routerLinkActive="active"
+            ariaCurrentWhenActive="page"
+            >Tags</a
+          >
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main [ngClass]="'mainWrapper'">
+    <!-- <section *ngIf="!selectedProject">
+      <app-projects id = "projects"
+      [categoryFilter]="categoryFilter"
+      (newCategoryFilterEvent)="setCategoryFilter($event)"
+      [tagFilter]="tagFilter"
+      (newTagFilterEvent)="setTagFilter($event)"
+      (newSelectedProjectEvent)="setSelectedProject($event)">
+      </app-projects>
+    </section>
+
+    <section id="project" *ngIf="selectedProject">
+      <button (click)="clearSelectedProject()">Back</button>
+      <app-project [project]="selectedProject"></app-project>
+    </section> -->
+    <router-outlet></router-outlet>
 
   
+  <section id = "filters">
+    <article *ngIf="categoryFilter || tagFilter">
+      <p>Filter:</p>
+      <button (click)="clearFilters()">{{categoryFilter?.name || tagFilter?.name}} 🗑️</button>
+    </article>
+
+    <!-- <article>
+      <app-categories
+      [categoryFilter]="categoryFilter"
+      (newCategoryFilterEvent)="setCategoryFilter($event)"
+    ></app-categories>
+    </article> -->
+    <article>
+      <app-categories
+    ></app-categories>
+    </article>
+
+    <!-- <article>
+      <app-tags
+      [tagFilter]="tagFilter"
+      (newTagFilterEvent)="setTagFilter($event)"
+    ></app-tags>
+    </article> -->
+
+    <article>
+      <app-tags
+    ></app-tags>
+    </article>
+
+  </section>
   
+  </main>
+
+  <footer>
+    &copy; {{name}} - {{year}}
+  </footer>
+  
+
+</div>
+
+
+
+
 
