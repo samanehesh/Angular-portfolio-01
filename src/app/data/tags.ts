@@ -4,7 +4,7 @@ export const TAGS: Tag[] = [
     {"id":1,"name":"SQL","slug":"sql"},
     {"id":2,"name":"Javascript","slug":"javascript"},
     {"id":3,"name":"CSS","slug":"css"},
-    {"id":4,"name":"Node.js","slug":"node.js"},
+    {"id":4,"name":"Node.js","slug":"nodejs"},
     {"id":5,"name":"React","slug":"react"},
     {"id":6,"name":"HTML","slug":"html"},
     {"id":7,"name":"C#","slug":"csharp"},

@@ -1,3 +1,6 @@
+<header>
+  <button type="button" (click)="goBack()">Back</button>
+</header>
 <article class = "oneProject">
   <section class="project-card">
       <img
@@ -8,6 +11,8 @@
       <div>
         <h2>{{ project?.title | uppercase }}</h2>
         <div>{{ project?.excerpt }}</div>
+        <div [innerHTML]="project?.body">{{ project?.body }}</div>
+
       </div>
   </section>
   <footer>

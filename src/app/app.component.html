@@ -1,10 +1,51 @@
 <div [ngClass]="'bodyWrapper'">
-  <header>
+<header>
+  <div>
     <h1>{{name}} {{title }}</h1>
-    
+  </div>
+  <nav>
+      <ul>
+        <li>
+          <a
+            routerLink="/"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            ariaCurrentWhenActive="page"
+            >Home</a
+          >
+        </li>
+        <li>
+          <a
+            routerLink="/projects"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            ariaCurrentWhenActive="page"
+            >Projects</a
+          >
+        </li>
+        <li>
+          <a
+            routerLink="/categories"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            ariaCurrentWhenActive="page"
+            >Categories</a
+          >
+        </li>
+        <li>
+          <a
+            routerLink="/tags"
+            routerLinkActive="active"
+            ariaCurrentWhenActive="page"
+            >Tags</a
+          >
+        </li>
+      </ul>
+    </nav>
   </header>
+
   <main [ngClass]="'mainWrapper'">
-    <section *ngIf="!selectedProject">
+    <!-- <section *ngIf="!selectedProject">
       <app-projects id = "projects"
       [categoryFilter]="categoryFilter"
       (newCategoryFilterEvent)="setCategoryFilter($event)"
@@ -13,14 +54,15 @@
       (newSelectedProjectEvent)="setSelectedProject($event)">
       </app-projects>
     </section>
-    
+
     <section id="project" *ngIf="selectedProject">
       <button (click)="clearSelectedProject()">Back</button>
       <app-project [project]="selectedProject"></app-project>
-    </section>
+    </section> -->
+    <router-outlet></router-outlet>
+
   
-  
-  <section >
+  <section id = "filters">
     <article *ngIf="categoryFilter || tagFilter">
       <p>Filter:</p>
       <button (click)="clearFilters()">{{categoryFilter?.name || tagFilter?.name}} 🗑️</button>

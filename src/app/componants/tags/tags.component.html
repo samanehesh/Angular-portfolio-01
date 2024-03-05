@@ -4,8 +4,16 @@
       {{ tag.name }}
     </div> -->
 
+    <!-- <div *ngFor="let tag of tags" [class.active]="tagFilter && tag.id == tagFilter.id"> -->
+
     <div *ngFor="let tag of tags" [class.active]="tagFilter && tag.id == tagFilter.id">
-        <a href="#" (click)="setTagFilter(tag)">{{ tag.name }}</a>
+        <!-- <a href="#" (click)="setTagFilter(tag)">{{ tag.name }}</a> -->
+        <a href = 
+        "/projects/tags/{{tag.slug}}"
+
+      >
+      {{ tag.name}}
+    </a>
       </div>
 </article>
 

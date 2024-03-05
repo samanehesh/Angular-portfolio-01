@@ -8,8 +8,16 @@
     {{ category.name }}
   </div> -->
 
+  <!-- <div *ngFor="let category of categories" [class.active]="categoryFilter && category.id == categoryFilter.id"> -->
+
   <div *ngFor="let category of categories" [class.active]="categoryFilter && category.id == categoryFilter.id">
-    <a href="#" (click)="setCategoryFilter(category)">{{ category.name }}</a>
+    <!-- <a href="#" (click)="setCategoryFilter(category)">{{ category.name }}</a> -->
+    <a href = 
+            "/projects/categories/{{category.slug}}"
+   
+          >
+          {{ category.name }}
+        </a>
   </div>
 </article>
 

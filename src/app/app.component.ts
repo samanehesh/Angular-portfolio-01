@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
 import { ProjectsComponent } from './componants/projects/projects.component';
 import { CategoriesComponent } from './componants/categories/categories.component';
 import { TagsComponent } from './componants/tags/tags.component';
 import { ProjectComponent } from './componants/project/project.component';
+import { RouterOutlet, RouterLink, RouterLinkActive } from '@angular/router';
+
 
 import { Project } from './model/project';
 import { Category } from './model/category';
@@ -16,7 +17,7 @@ import {ProjectFilterPipe} from './pipes/project-filter.pipe'
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet,ProjectFilterPipe,ProjectsComponent,CategoriesComponent,TagsComponent,ProjectComponent],
+  imports: [CommonModule, RouterOutlet,RouterLink, RouterLinkActive, ProjectFilterPipe, ProjectsComponent,CategoriesComponent,TagsComponent,ProjectComponent],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
