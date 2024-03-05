@@ -25,7 +25,7 @@
         </li>
         <li>
           <a
-            routerLink="/categories"
+            routerLink="projects/categories"
             routerLinkActive="active"
             [routerLinkActiveOptions]="{ exact: true }"
             ariaCurrentWhenActive="page"
@@ -34,7 +34,7 @@
         </li>
         <li>
           <a
-            routerLink="/tags"
+            routerLink="projects/tags"
             routerLinkActive="active"
             ariaCurrentWhenActive="page"
             >Tags</a
@@ -68,17 +68,26 @@
       <button (click)="clearFilters()">{{categoryFilter?.name || tagFilter?.name}} 🗑️</button>
     </article>
 
-    <article>
+    <!-- <article>
       <app-categories
       [categoryFilter]="categoryFilter"
       (newCategoryFilterEvent)="setCategoryFilter($event)"
     ></app-categories>
+    </article> -->
+    <article>
+      <app-categories
+    ></app-categories>
     </article>
 
-    <article>
+    <!-- <article>
       <app-tags
       [tagFilter]="tagFilter"
       (newTagFilterEvent)="setTagFilter($event)"
+    ></app-tags>
+    </article> -->
+
+    <article>
+      <app-tags
     ></app-tags>
     </article>
 

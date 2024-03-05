@@ -15,7 +15,7 @@
 
       </div>
   </section>
-  <footer>
+  <!-- <footer>
       <div *ngIf="project?.category">
         Category: <span>{{ project?.category?.name }}</span>
       </div>
@@ -25,5 +25,28 @@
           {{ tag.name }}
         </span>
       </div>
+  </footer> -->
+
+  <footer>
+    <div *ngIf="project?.category && project?.category?.name">
+      Category: 
+      <a href = 
+      "/projects/categories/{{project?.category?.slug}}"
+
+    >
+    {{ project?.category?.name }}
+  </a>
+    </div>
+    <div *ngIf="project?.tags">
+      Tags:
+      <span *ngFor="let tag of project?.tags">
+        <a href = 
+        "/projects/tags/{{tag.slug}}"
+  
+      >
+      {{ tag.name }}
+    </a>
+      </span>
+    </div>
   </footer>
 </article>
