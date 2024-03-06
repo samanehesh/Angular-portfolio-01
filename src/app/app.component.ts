@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit  } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { ProjectsComponent } from './componants/projects/projects.component';
@@ -6,13 +6,10 @@ import { CategoriesComponent } from './componants/categories/categories.componen
 import { TagsComponent } from './componants/tags/tags.component';
 import { ProjectComponent } from './componants/project/project.component';
 import { RouterOutlet, RouterLink, RouterLinkActive } from '@angular/router';
-
-
-import { Project } from './model/project';
-import { Category } from './model/category';
-import { Tag } from './model/tag';
+import { Router } from '@angular/router';
 
 import {ProjectFilterPipe} from './pipes/project-filter.pipe'
+import { ActivatedRoute, NavigationEnd  } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -21,38 +18,30 @@ import {ProjectFilterPipe} from './pipes/project-filter.pipe'
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
+  constructor(
+    private router: Router,
+    private route: ActivatedRoute
+
+  ) {}
+
   title = 'Portfolio';
   name = 'Samaneh';
   year = new Date().getFullYear();
+  segment!: string;
+  // segment: string = this.route.snapshot.url[1]?.path;
 
-  categoryFilter : Category | undefined;
-  tagFilter: Tag |undefined
-
-  selectedProject?: Project;
-  setSelectedProject(project: Project) {
-    this.selectedProject = project;
+  navigateToProjects(): void {
+    this.router.navigate(['/projects']);  
   }
+  ngOnInit(): void {
+    // Use router.events to track route changes
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        // Extract segment from the URL
+        this.segment = this.route.snapshot.firstChild?.url[2]?.path || '';
+      }
+    });
 
-  clearSelectedProject() {
-    this.selectedProject = undefined;
-  }
-// this function set the category filter
-  setCategoryFilter(category: Category) {
-    this.categoryFilter = category;
-    this.tagFilter = undefined;
-  }
-
-// this function set the tag filter
-  setTagFilter(tag: Tag) {
-    this.tagFilter = tag;
-    this.categoryFilter = undefined;
-  }
-
-// this function clears tag and category filter
-  clearFilters(){
-    this.categoryFilter = undefined;
-    this.tagFilter = undefined;
-  }
-
+}
 }

@@ -1,4 +1,4 @@
-import { Component,Input } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
@@ -20,7 +20,6 @@ export class ProjectComponent {
     private projectService: ProjectService,
     private location: Location
   ) {}
-  // @Input() project?: Project;
   project?: Project;
 
   getProject(): void {
@@ -28,13 +27,17 @@ export class ProjectComponent {
     this.project = this.projectService.getProject(id);
   }
 
-  // call getMinifig() in the ngOnInit lifecycle hook
-  ngOnInit(): void {
-    this.getProject();
+  getProjectBySlug(): void {
+    // const slug = this.route.snapshot.paramMap.get('slug');
+    const segment: string = this.route.snapshot.url[1]?.path;
+    this.project = this.projectService.getProjectBySlug(segment);
   }
 
-  // add a goBack() method that uses the Location service to go back to the previous page
-  // this is better than a link because it will work even if the user navigates to this page from a different source
+  ngOnInit(): void {
+    this.getProjectBySlug();
+  }
+
+
   goBack(): void {
     this.location.back();
   }

@@ -11,21 +11,10 @@
       <div>
         <h2>{{ project?.title | uppercase }}</h2>
         <div>{{ project?.excerpt }}</div>
-        <div [innerHTML]="project?.body">{{ project?.body }}</div>
+        <div [innerHTML]="project?.body"></div>
 
       </div>
   </section>
-  <!-- <footer>
-      <div *ngIf="project?.category">
-        Category: <span>{{ project?.category?.name }}</span>
-      </div>
-      <div *ngIf="project?.tags?.length">
-        Tags:
-        <span *ngFor="let tag of project?.tags">
-          {{ tag.name }}
-        </span>
-      </div>
-  </footer> -->
 
   <footer>
     <div *ngIf="project?.category && project?.category?.name">

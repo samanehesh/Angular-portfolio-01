@@ -63,32 +63,5 @@ export class ProjectsComponent implements OnInit {
     });
   }
 
-  @Input() categoryFilter: Category | undefined;
-  @Input() tagFilter: Tag | undefined;
-
-  @Output() newCategoryFilterEvent = new EventEmitter<Category>();
-  @Output() newTagFilterEvent = new EventEmitter<Tag>();
-
-  @Input() selectedProject: Project | undefined;
-  @Output() newSelectedProjectEvent = new EventEmitter<Project>();
-
-  setSelectedProject(project: Project): void {
-    this.newSelectedProjectEvent.emit(project);
-  }
-
-  setCategoryFilter(category: Category) {
-    this.categoryFilter = category;
-    this.newCategoryFilterEvent.emit(category);
-  }
-
-  setTagFilter(tag: Tag) {
-    this.tagFilter = tag;
-    this.newTagFilterEvent.emit(tag);
-  }
-
-  clearFilters() {
-    this.categoryFilter = undefined;
-    this.tagFilter = undefined;
-  }
 
 }

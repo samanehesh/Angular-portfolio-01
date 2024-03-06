@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { Category } from '../../model/category';
@@ -14,7 +14,6 @@ import { CategoryService } from '../../services/category.service';
 export class CategoriesComponent {
   constructor(private categoryService: CategoryService) {}
 
-  // themes = THEMES;
   categories: Category[] = [];
   getCategories(): void {
     this.categories = this.categoryService.getCategories();
@@ -23,12 +22,5 @@ export class CategoriesComponent {
     this.getCategories();
   }
 
-  @Input() categoryFilter: Category | undefined;
-  @Output() newCategoryFilterEvent = new EventEmitter<Category>();
-  
-  setCategoryFilter(category: Category) {
-    this.categoryFilter = category;
-    this.newCategoryFilterEvent.emit(category);
-  }
 
 }

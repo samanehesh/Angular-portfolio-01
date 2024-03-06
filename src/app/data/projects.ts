@@ -5,7 +5,7 @@ export const PROJECTS: Project[] = [
     {
       "id": 1,
       "title": "React Calculator",
-      "slug": "React Calculator",
+      "slug": "react-calculator",
       "excerpt": "React Calculator where math meets React for seamless and user-friendly numerical computations.",
       "body": "<p>React Calculator is interactive user interface for performing mathematical calculations. Integrating state management within React, a calculator project can efficiently handle user input, update display elements, and execute precise mathematical operations.</p>",
       "url": null,
