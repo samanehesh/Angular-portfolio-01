@@ -1,49 +1,68 @@
-<div id = "allProjects">
+<div id = "project-Page-Wrapper">
+  <section id = "allProjects">
 
-  <article class = "oneProject" 
-  *ngFor="let project of projects"
-  >
-    <!-- <a href="/projects/{{ project.slug}}"> -->
-    <section>
-      <section class ="imageSection">
-        <img
-          *ngIf="project.image"
-          [src]="'assets/images/' + project.image"
-          alt="Image of {{ project.title }}"
-        />
+    <article class = "oneProject" *ngFor="let project of projects">
+      <section id = "exsection">
+        <h4>{{ project.title | uppercase }}</h4>
+        <div id ="excerpt" >{{ project.excerpt }}</div>
       </section>
-      <section>
-        <a href="/projects/{{ project.slug }}"><h2>{{ project.title | uppercase }}</h2></a>
-        <div>{{ project.excerpt }}</div>
+      <section id = "button-more-info">
+        <a href="/projects/{{ project.slug }}">More Info</a>
       </section>
-    </section>
-    <!-- </a> -->
-  
-  <footer>
-    <div *ngIf="project.category && project.category.name">
-      Category: 
-      <a href = 
-      "/projects/categories/{{project.category.slug}}"
+    
+      <footer class="card-footer">
+        <div *ngIf="project.category && project.category.name">
+          <!-- Category:  -->
+          <a [ngClass]="{'redish': project.category.slug === 'back-end', 
+                        'blueish': project.category.slug === 'full-stack',
+                        'greenish': project.category.slug === 'front-end',            
+          }" 
+          href="/projects/categories/{{project.category.slug}}">
+            {{ project.category.name }}
+          </a>
+        </div>
+        <div *ngIf="project.tags && project.tags.length > 0">
+          <!-- Tags: -->
+          <span *ngFor="let tag of project.tags" >
 
-    >
-    {{ project.category.name }}
-  </a>
-    </div>
-    <div *ngIf="project.tags && project.tags.length > 0">
-      Tags:
-      <span *ngFor="let tag of project.tags">
-        <a href = 
-        "/projects/tags/{{tag.slug}}"
+            <a [ngClass]="{'red': tag.slug === 'sql', 
+                          'blue': tag.slug === 'javascript',
+                          'orange': tag.slug === 'css',
+                          'green': tag.slug === 'nodejs',
+                          'yellow': tag.slug === 'react',
+                          'indigo': tag.slug === 'html',
+                          'violet': tag.slug === 'csharp',
+                          'orangee': tag.slug === 'mongo',
+                          'redi': tag.slug === 'angular',                         
+                          }" 
+                          href = "/projects/tags/{{tag.slug}}"
+      
+          >
+          {{ tag.name }}
+        </a>
+          </span>
+        </div>
+      </footer>
   
-      >
-      {{ tag.name }}
-    </a>
-      </span>
-    </div>
-  </footer>
-
-  </article>
+    </article>
+  </section>
+  
+  <section id = "filters">
+  
+    <article >
+      <p>Filter:</p>
+      <button (click) = "navigateToProjects()"> {{ Urlsegment | uppercase}} 🗑️</button>
+    </article>
+  
+    <article>
+      <app-categories
+    ></app-categories>
+    </article>
+  
+    <article>
+      <app-tags
+    ></app-tags>
+    </article>
+  
+  </section>
 </div>
-
-
-

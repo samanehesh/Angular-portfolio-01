@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { Tag } from '../../model/tag';
 import { TagService } from '../../services/tag.service';
+import {Title} from '@angular/platform-browser'
 
 @Component({
   selector: 'app-tags',
@@ -12,7 +13,10 @@ import { TagService } from '../../services/tag.service';
   styleUrl: './tags.component.scss'
 })
 export class TagsComponent {
-  constructor(private tagService: TagService) {}
+  constructor(private tagService: TagService, private titleService : Title) {
+    this.titleService.setTitle("Tags");
+
+  }
 
   tags: Tag[] = [];
   getTags(): void {

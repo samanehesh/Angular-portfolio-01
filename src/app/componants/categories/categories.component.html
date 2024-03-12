@@ -2,7 +2,11 @@
 <article id="categories">
 
   <div *ngFor="let category of categories" >
-    <a href = 
+    <a [ngClass]="{'redish': category.slug === 'back-end', 
+    'blueish': category.slug === 'full-stack',
+    'greenish':category.slug === 'front-end',            
+}" 
+    href = 
             "/projects/categories/{{category.slug}}"
           >
           {{ category.name }}

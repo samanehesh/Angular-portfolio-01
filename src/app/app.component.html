@@ -1,9 +1,16 @@
 <div [ngClass]="'bodyWrapper'">
 <header>
-  <div>
-    <h1>{{name}} {{title }}</h1>
+  <div id = "name-title">
+    <h1>{{name}} </h1>
+    <h2>{{title }}</h2>
   </div>
-  <nav>
+  <button class="btn-menu" id="btn-menu" aria-label="Toggle Menu">
+    <span class="button-content">
+      <span class="text">Menu</span>
+      <span class="bar" id="bar"></span> 
+    </span>
+  </button>
+  <nav id="main-navigation">
       <ul>
         <li>
           <a
@@ -12,6 +19,15 @@
             [routerLinkActiveOptions]="{ exact: true }"
             ariaCurrentWhenActive="page"
             >Home</a
+          >
+        </li>
+        <li>
+          <a
+            routerLink="/about"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            ariaCurrentWhenActive="page"
+            >About</a
           >
         </li>
         <li>
@@ -25,21 +41,39 @@
         </li>
         <li>
           <a
+            routerLink="/resume"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            ariaCurrentWhenActive="page"
+            >Resume</a
+          >
+        </li>
+        <li>
+          <a
+            routerLink="/contact"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            ariaCurrentWhenActive="page"
+            >Contact</a
+          >
+        </li>
+        <!-- <li>
+          <a
             routerLink="projects/categories"
             routerLinkActive="active"
             [routerLinkActiveOptions]="{ exact: true }"
             ariaCurrentWhenActive="page"
             >Categories</a
           >
-        </li>
-        <li>
+        </li> -->
+        <!-- <li>
           <a
             routerLink="projects/tags"
             routerLinkActive="active"
             ariaCurrentWhenActive="page"
             >Tags</a
           >
-        </li>
+        </li> -->
       </ul>
     </nav>
   </header>
@@ -48,35 +82,36 @@
 
     <router-outlet></router-outlet>
 
-  
-  <section id = "filters">
-
-    <article >
-      <p>Filter:</p>
-      <button (click) = "navigateToProjects()"> {{ segment | uppercase}} 🗑️</button>
-    </article>
-
-    <article>
-      <app-categories
-    ></app-categories>
-    </article>
-
-    <article>
-      <app-tags
-    ></app-tags>
-    </article>
-
-  </section>
-  
   </main>
 
   <footer>
     &copy; {{name}} - {{year}}
   </footer>
-  
-
 </div>
+<script>
+const body = document.body;
+const btnMenu = document.getElementById('btn-menu');
+const nav = document.getElementById('main-navigation');
 
+btnMenu.addEventListener('click', toggleMenu);
+
+function toggleMenu() {
+  body.classList.toggle('show');
+  nav.classList.toggle('activated');
+  console.log()
+}
+
+const mql = window.matchMedia('(min-width: 760px)');
+mql.addListener(removeTransition);
+
+function removeTransition(e) {
+  if (e.matches) {
+    body.classList.remove('show');
+    nav.classList.remove('activated');
+  }
+}
+
+</script>
 
 
 

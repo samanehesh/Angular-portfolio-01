@@ -16,7 +16,7 @@ export const PROJECTS: Project[] = [
       "category_id": 2,
       "created_at": "2023-02-23T22:31:23.000000Z",
       "updated_at": "2023-02-23T22:31:23.000000Z",
-      "category": { "id": 2, "slug": "front-end", "name": "Front End" },
+      "category": { "id": 2, "slug": "front-end", "name": "Front End"},
       "tags": [
         {"id":5,"name":"React","slug":"react"},
         {"id":3,"name":"CSS","slug":"css"}
@@ -53,7 +53,7 @@ export const PROJECTS: Project[] = [
       "category_id": 2,
       "created_at": "2023-02-23T22:31:23.000000Z",
       "updated_at": "2023-02-23T22:31:23.000000Z",
-      "category": { "id": 2, "slug": "front-end", "name": "Front End" },
+      "category": { "id": 2, "slug": "front-end", "name": "Front End"},
       "tags": [
         {"id":5,"name":"React","slug":"react"},
         {"id":3,"name":"CSS","slug":"css"}
@@ -72,7 +72,7 @@ export const PROJECTS: Project[] = [
       "category_id": 2,
       "created_at": "2023-02-23T22:31:23.000000Z",
       "updated_at": "2023-02-23T22:31:23.000000Z",
-      "category":   { "id": 3, "slug": "full-stack", "name": "Full Stack" },
+      "category":   { "id": 3, "slug": "full-stack", "name": "Full Stack"},
       "tags": [
         {"id":1,"name":"SQL","slug":"sql"},
         {"id":7,"name":"C#","slug":"csharp"},
@@ -91,7 +91,7 @@ export const PROJECTS: Project[] = [
       "category_id": 2,
       "created_at": "2023-02-23T22:31:23.000000Z",
       "updated_at": "2023-02-23T22:31:23.000000Z",
-      "category": { "id": 2, "slug": "front-end", "name": "Front End" },
+      "category": { "id": 2, "slug": "front-end", "name": "Front End"},
       "tags": [
         {"id":2,"name":"Javascript","slug":"javascript"},
         {"id":3,"name":"CSS","slug":"css"},
@@ -111,7 +111,7 @@ export const PROJECTS: Project[] = [
       "category_id": 3,
       "created_at": "2023-02-23T22:31:23.000000Z",
       "updated_at": "2023-02-23T22:31:23.000000Z",
-      "category": { "id": 3, "slug": "full-stack", "name": "Full Stack" }
+      "category": { "id": 3, "slug": "full-stack", "name": "Full Stack"}
       ,
       "tags": [
         {"id":4,"name":"Node.js","slug":"nodejs"},
@@ -131,7 +131,7 @@ export const PROJECTS: Project[] = [
       "category_id": 1,
       "created_at": "2023-02-23T22:31:23.000000Z",
       "updated_at": "2023-02-23T22:31:23.000000Z",
-      "category":   { "id": 1, "slug": "back-end", "name": "Back End" },
+      "category":   { "id": 1, "slug": "back-end", "name": "Back End"},
       "tags": [
         {"id":1,"name":"SQL","slug":"sql"},
         {"id":7,"name":"C#","slug":"csharp"},
@@ -150,7 +150,7 @@ export const PROJECTS: Project[] = [
       "category_id": 3,
       "created_at": "2023-02-23T22:31:23.000000Z",
       "updated_at": "2023-02-23T22:31:23.000000Z",
-      "category": { "id": 3, "slug": "full-stack", "name": "Full Stack" },
+      "category": { "id": 3, "slug": "full-stack", "name": "Full Stack"},
       "tags": []
     }
   ]
