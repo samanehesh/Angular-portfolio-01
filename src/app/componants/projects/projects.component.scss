@@ -47,6 +47,22 @@ a {
      /* Set the desired default font color */
     text-decoration: none;
 }
+p{
+    font-family:  serif;
+}
+#excerpt{
+    font-size: 17px;
+    font-style: italic;
+}
+#title{
+    font-size: 20px;
+    font-style: bold;
+    font-family:Times, 'Times New Roman', serif;
+    text-align: center;
+    color: rgb(70, 67, 67);
+}
+
+
 #allProjects article{
     border: 1px solid rgb(139, 136, 136);
     margin: 20px;

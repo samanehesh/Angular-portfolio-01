@@ -3,8 +3,8 @@
 
     <article class = "oneProject" *ngFor="let project of projects">
       <section id = "exsection">
-        <h4>{{ project.title | uppercase }}</h4>
-        <div id ="excerpt" >{{ project.excerpt }}</div>
+        <p id = "title">{{ project.title | uppercase }}</p>
+        <p id ="excerpt" >{{ project.excerpt }}</p>
       </section>
       <section id = "button-more-info">
         <a href="/projects/{{ project.slug }}">More Info</a>

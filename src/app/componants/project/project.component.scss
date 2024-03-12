@@ -1,8 +1,11 @@
-.hidden {
-    display: none;
-}
 a {
     color: black; /* Set the desired default font color */
+    text-decoration: none;
+}
+p{
+    
+    font-family:  serif;
+    
 }
 article{
     border: 1px solid rgb(139, 136, 136);
@@ -14,9 +17,7 @@ article{
     // width: 200px;
     // text-align: center;
 }
-.hidden {
-    display: none;
-}
+
 .oneProject{
     display: grid;
     grid-template-columns: 1;

@@ -1,6 +1,4 @@
-<header>
-  <button type="button" (click)="goBack()">Back</button>
-</header>
+
 <article class = "oneProject">
   <section class="project-card">
       <img
@@ -9,9 +7,9 @@
         alt="Image of {{ project?.title }}"
       />
       <div>
-        <h2>{{ project?.title | uppercase }}</h2>
-        <div>{{ project?.excerpt }}</div>
-        <div [innerHTML]="project?.body"></div>
+        <p>{{ project?.title | uppercase }}</p>
+        <p>{{ project?.excerpt }}</p>
+        <p [innerHTML]="project?.body"></p>
 
       </div>
   </section>
@@ -31,7 +29,6 @@
       <span *ngFor="let tag of project?.tags">
         <a href = 
         "/projects/tags/{{tag.slug}}"
-  
       >
       {{ tag.name }}
     </a>
@@ -39,3 +36,7 @@
     </div>
   </footer>
 </article>
+
+<header>
+  <button type="button" (click)="goBack()">Back</button>
+</header>

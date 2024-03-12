@@ -151,7 +151,10 @@ export const PROJECTS: Project[] = [
       "created_at": "2023-02-23T22:31:23.000000Z",
       "updated_at": "2023-02-23T22:31:23.000000Z",
       "category": { "id": 3, "slug": "full-stack", "name": "Full Stack"},
-      "tags": []
+      "tags": [
+        {"id":1,"name":"SQL","slug":"sql"},
+        {"id":7,"name":"C#","slug":"csharp"},
+      ]
     }
   ]
   
