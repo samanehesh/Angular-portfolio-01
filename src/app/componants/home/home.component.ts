@@ -11,4 +11,7 @@ import {Title} from '@angular/platform-browser'
 export class HomeComponent {
   constructor(private titleService : Title) {
     this.titleService.setTitle("Home")
-  }}
+  }
+  title = 'Software Developer in Trainee';
+  name = 'Samaneh Heshmatzadeh';
+}

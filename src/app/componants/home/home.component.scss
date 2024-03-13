@@ -1,0 +1,28 @@
+#home-container{
+display: flex;
+justify-content: left;
+align-items: center;
+& #name{
+    font-size: 50px;
+    font-weight: bold;
+    margin: 20px;
+}
+& #title{
+    font-size: 20px;
+    // font-weight: bolder;
+    font-style: italic;
+    margin-top: 30px;
+    margin-left: 20px;
+}
+}
+@media (min-width: 760px) {
+    #home-container{
+        display: flex;
+        flex-direction: row;
+        background-image: url('../../../assets/images/ssd6.jpg');
+        background-position: center; /* Center the image */
+        height: 600px;
+    }
+}
+
+
