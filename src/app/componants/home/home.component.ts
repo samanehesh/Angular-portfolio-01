@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import {Title} from '@angular/platform-browser'
+import { Router } from '@angular/router'; // Import Router
+
 
 @Component({
   selector: 'app-home',
@@ -9,9 +11,13 @@ import {Title} from '@angular/platform-browser'
   styleUrl: './home.component.scss'
 })
 export class HomeComponent {
-  constructor(private titleService : Title) {
+  constructor(private titleService : Title,  private router: Router ) {
     this.titleService.setTitle("Home")
   }
   title = 'Software Developer in Trainee';
   name = 'Samaneh Heshmatzadeh';
+  Explore(){
+    this.router.navigate(['/about']); // Navigate to the /about route
+
+}
 }

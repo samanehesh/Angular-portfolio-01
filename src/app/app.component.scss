@@ -46,7 +46,7 @@ nav {
 	height: 0;
 	visibility: hidden;
 	overflow: hidden;
-	background-color: blue;
+	background-color: rgb(74, 74, 232);
 
     & ul {
 	padding: 0;
@@ -95,12 +95,14 @@ footer{
     display: flex;
     flex-direction: row;
     justify-content: right;
+    margin-right: 10px;
 }
 
 @media (min-width: 760px) {
     nav {
         visibility: visible;
         height: 44px;
+        // background-color:rgb(74, 74, 232);
         background-color:rgb(231, 229, 229);
         box-shadow: 6px 8px 4px rgba(184, 182, 182, 0.1); 
         ul {
