@@ -13,10 +13,7 @@
       <footer class="card-footer">
         <div *ngIf="project.category && project.category.name">
           <!-- Category:  -->
-          <a [ngClass]="{'redish': project.category.slug === 'back-end', 
-                        'blueish': project.category.slug === 'full-stack',
-                        'greenish': project.category.slug === 'front-end',            
-          }" 
+          <a [ngStyle]="{'background-color': project.category.color}"  
           href="/projects/categories/{{project.category.slug}}">
             {{ project.category.name }}
           </a>
@@ -25,16 +22,7 @@
           <!-- Tags: -->
           <span *ngFor="let tag of project.tags" >
 
-            <a [ngClass]="{'red': tag.slug === 'sql', 
-                          'blue': tag.slug === 'javascript',
-                          'orange': tag.slug === 'css',
-                          'green': tag.slug === 'nodejs',
-                          'yellow': tag.slug === 'react',
-                          'indigo': tag.slug === 'html',
-                          'violet': tag.slug === 'csharp',
-                          'orangee': tag.slug === 'mongo',
-                          'redi': tag.slug === 'angular',                         
-                          }" 
+            <a [ngStyle]="{'background-color': tag.color}" 
                           href = "/projects/tags/{{tag.slug}}"
       
           >

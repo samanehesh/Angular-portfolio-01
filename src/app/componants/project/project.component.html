@@ -17,7 +17,7 @@
   <footer>
     <div *ngIf="project?.category && project?.category?.name">
       Category: 
-      <a href = 
+      <a [ngStyle]="{'background-color': project?.category?.color}" href = 
       "/projects/categories/{{project?.category?.slug}}"
 
     >
@@ -27,7 +27,7 @@
     <div *ngIf="project?.tags">
       Tags:
       <span *ngFor="let tag of project?.tags">
-        <a href = 
+        <a [ngStyle]="{'background-color': tag.color}"href = 
         "/projects/tags/{{tag.slug}}"
       >
       {{ tag.name }}

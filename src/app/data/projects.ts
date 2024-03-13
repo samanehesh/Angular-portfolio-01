@@ -16,10 +16,10 @@ export const PROJECTS: Project[] = [
       "category_id": 2,
       "created_at": "2023-02-23T22:31:23.000000Z",
       "updated_at": "2023-02-23T22:31:23.000000Z",
-      "category": { "id": 2, "slug": "front-end", "name": "Front End"},
+      "category": { "id": 2, "slug": "front-end", "name": "Front End", "color": "Blue" },
       "tags": [
-        {"id":5,"name":"React","slug":"react"},
-        {"id":3,"name":"CSS","slug":"css"}
+        {"id":5,"name":"React","slug":"react","color": "DeepPink" },
+        {"id":3,"name":"CSS","slug":"css","color": "Purple"}
       ]
     },
     {
@@ -35,9 +35,9 @@ export const PROJECTS: Project[] = [
       "category_id": 2,
       "created_at": "2023-02-23T22:31:23.000000Z",
       "updated_at": "2023-02-23T22:31:23.000000Z",
-      "category": { "id": 2, "slug": "front-end", "name": "Front End" },
+      "category": { "id": 2, "slug": "front-end", "name": "Front End","color": "Blue" },
       "tags": [
-        {"id":9,"name":"Angular","slug":"angular"},
+        {"id":9,"name":"Angular","slug":"angular","color": "Peru"},
       ]
     },
     {
@@ -53,10 +53,10 @@ export const PROJECTS: Project[] = [
       "category_id": 2,
       "created_at": "2023-02-23T22:31:23.000000Z",
       "updated_at": "2023-02-23T22:31:23.000000Z",
-      "category": { "id": 2, "slug": "front-end", "name": "Front End"},
+      "category": { "id": 2, "slug": "front-end", "name": "Front End","color": "Blue"},
       "tags": [
-        {"id":5,"name":"React","slug":"react"},
-        {"id":3,"name":"CSS","slug":"css"}
+        {"id":5,"name":"React","slug":"react","color": "DeepPink"},
+        {"id":3,"name":"CSS","slug":"css","color": "Purple"}
       ]
     },
     {
@@ -72,10 +72,10 @@ export const PROJECTS: Project[] = [
       "category_id": 2,
       "created_at": "2023-02-23T22:31:23.000000Z",
       "updated_at": "2023-02-23T22:31:23.000000Z",
-      "category":   { "id": 3, "slug": "full-stack", "name": "Full Stack"},
+      "category":   { "id": 3, "slug": "full-stack", "name": "Full Stack","color": "Green"},
       "tags": [
-        {"id":1,"name":"SQL","slug":"sql"},
-        {"id":7,"name":"C#","slug":"csharp"},
+        {"id":1,"name":"SQL","slug":"sql","color": "Orange"},
+        {"id":7,"name":"C#","slug":"csharp","color": "Crimson"},
       ]
     },
     {
@@ -91,11 +91,11 @@ export const PROJECTS: Project[] = [
       "category_id": 2,
       "created_at": "2023-02-23T22:31:23.000000Z",
       "updated_at": "2023-02-23T22:31:23.000000Z",
-      "category": { "id": 2, "slug": "front-end", "name": "Front End"},
+      "category": { "id": 2, "slug": "front-end", "name": "Front End","color": "Blue"},
       "tags": [
-        {"id":2,"name":"Javascript","slug":"javascript"},
-        {"id":3,"name":"CSS","slug":"css"},
-        {"id":6,"name":"HTML","slug":"html"}
+        {"id":2,"name":"Javascript","slug":"javascript","color": "CornFlowerBlue"},
+        {"id":3,"name":"CSS","slug":"css","color": "Purple"},
+        {"id":6,"name":"HTML","slug":"html","color": "YellowGreen"}
       ]
     },
     {
@@ -111,11 +111,11 @@ export const PROJECTS: Project[] = [
       "category_id": 3,
       "created_at": "2023-02-23T22:31:23.000000Z",
       "updated_at": "2023-02-23T22:31:23.000000Z",
-      "category": { "id": 3, "slug": "full-stack", "name": "Full Stack"}
+      "category": { "id": 3, "slug": "full-stack", "name": "Full Stack","color": "Green"}
       ,
       "tags": [
-        {"id":4,"name":"Node.js","slug":"nodejs"},
-        {"id":8,"name":"Mongo","slug":"mongo"},
+        {"id":4,"name":"Node.js","slug":"nodejs","color": "Indigo"},
+        {"id":8,"name":"Mongo","slug":"mongo","color": "Orchid"},
       ]
     },
     {
@@ -131,10 +131,10 @@ export const PROJECTS: Project[] = [
       "category_id": 1,
       "created_at": "2023-02-23T22:31:23.000000Z",
       "updated_at": "2023-02-23T22:31:23.000000Z",
-      "category":   { "id": 1, "slug": "back-end", "name": "Back End"},
+      "category":   { "id": 1, "slug": "back-end", "name": "Back End","color": "Red"},
       "tags": [
-        {"id":1,"name":"SQL","slug":"sql"},
-        {"id":7,"name":"C#","slug":"csharp"},
+        {"id":1,"name":"SQL","slug":"sql","color": "Orange"},
+        {"id":7,"name":"C#","slug":"csharp","color": "Crimson"},
       ]
     },
     {
@@ -150,10 +150,10 @@ export const PROJECTS: Project[] = [
       "category_id": 3,
       "created_at": "2023-02-23T22:31:23.000000Z",
       "updated_at": "2023-02-23T22:31:23.000000Z",
-      "category": { "id": 3, "slug": "full-stack", "name": "Full Stack"},
+      "category": { "id": 3, "slug": "full-stack", "name": "Full Stack","color": "Green"},
       "tags": [
-        {"id":1,"name":"SQL","slug":"sql"},
-        {"id":7,"name":"C#","slug":"csharp"},
+        {"id":1,"name":"SQL","slug":"sql","color": "Orange"},
+        {"id":7,"name":"C#","slug":"csharp","color": "Crimson"},
       ]
     }
   ]

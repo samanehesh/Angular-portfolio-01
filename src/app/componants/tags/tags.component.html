@@ -2,16 +2,7 @@
     <p>Tags</p>
 
     <div *ngFor="let tag of tags" >
-        <a [ngClass]="{'red': tag.slug === 'sql', 
-        'blue': tag.slug === 'javascript',
-        'orange': tag.slug === 'css',
-        'green': tag.slug === 'nodejs',
-        'yellow': tag.slug === 'react',
-        'indigo': tag.slug === 'html',
-        'violet': tag.slug === 'csharp',
-        'orangee': tag.slug === 'mongo',
-        'redi': tag.slug === 'angular',                         
-        }" 
+        <a [ngStyle]="{'color': tag.color}" 
         href = 
         "/projects/tags/{{tag.slug}}"
 
