@@ -2,8 +2,8 @@
   <section id = "allProjects">
 
     <article class = "oneProject" *ngFor="let project of projects">
-      <section id = "exsection">
-        <p id = "title">{{ project.title | uppercase }}</p>
+      <section style="margin-top: 15px;" id = "exsection">
+        <p style="margin-bottom: 20px;"id = "title">{{ project.title | uppercase }}</p>
         <p id ="excerpt" >{{ project.excerpt }}</p>
       </section>
       <section id = "button-more-info">
@@ -37,17 +37,17 @@
   
   <section id = "filters">
   
-    <article >
+    <article style="margin-top: 20px;" >
       <p>Filter:</p>
       <button (click) = "navigateToProjects()"> {{ Urlsegment | uppercase}} 🗑️</button>
     </article>
   
-    <article>
+    <article style="margin-top: 20px;">
       <app-categories
     ></app-categories>
     </article>
   
-    <article>
+    <article style="margin-top: 20px;">
       <app-tags
     ></app-tags>
     </article>

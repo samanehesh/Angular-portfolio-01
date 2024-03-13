@@ -70,15 +70,14 @@ nav {
         }
     }
     &.activated {
-        transition: height 1 ease, visibility 0s 0.3s;
+        transition: height 1s ease, visibility 0s 0.3s;
     }
     .show & {
-        transition: height 1 ease, visibility 0s;
+        transition: height 1s ease, visibility 0s;
         visibility: visible;
         height: 210px;
     }
 }
-
 
 main{
     grid-row: 2;

@@ -23,6 +23,17 @@ export class AppComponent {
   name = 'Samaneh Heshmatzadeh';
   year = new Date().getFullYear();
 
+  toggleMenu() {
+    console.log("menuuuuuuuuuuuuuu")
+    const body = document.body;
+    console.log("body", body)
+
+    const nav = document.getElementById('main-navigation');
+    console.log("nav", nav)
+
+    body.classList.toggle('show');
+    nav?.classList.toggle('activated');
+  }
 
 }
 
