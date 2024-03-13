@@ -32,7 +32,7 @@ header{
     display: grid;
     // grid-template-rows: 2;
 	// grid-template-columns: 1;
-    grid-template-rows: 150px 45px;
+    grid-template-rows: 135px 45px;
     width: 100%;
     & #name-title{
         grid-row: 1;
@@ -85,18 +85,22 @@ main{
 
 footer{
     grid-row: 3;
-    justify-self: right;
     align-self: self-end;
+    margin: 10px;
+    justify-self: right;
 }
 
-
+#social-media{
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+}
 
 @media (min-width: 760px) {
     nav {
         visibility: visible;
         height: 44px;
         background-color:rgb(231, 229, 229);
-        // background-color:rgb(137, 165, 209);
         box-shadow: 6px 8px 4px rgba(184, 182, 182, 0.1); 
         ul {
             display: flex;

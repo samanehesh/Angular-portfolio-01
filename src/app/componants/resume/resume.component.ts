@@ -1,13 +1,14 @@
 import { Component, Renderer2 } from '@angular/core';
 import {Title} from '@angular/platform-browser';
-//import { MatExpansionModule } from '@angular/material/expansion'; // Import MatExpansionModule
+import { MatExpansionModule } from '@angular/material/expansion';
+import { AccordionModule } from 'ngx-bootstrap/accordion';
 
 
 @Component({
   selector: 'app-resume',
   standalone: true,
   imports: [
-    //MatExpansionModule // Add MatExpansionModule to imports array
+    AccordionModule
   ],
     templateUrl: './resume.component.html',
   styleUrl: './resume.component.scss'

@@ -1,8 +1,23 @@
 <div [ngClass]="'bodyWrapper'">
 <header>
-  <div style="margin-top: 50px;" id = "name-title">
-    <p id = "name">{{name}} </p>
-    <p style="margin-top: 20px;" id = "title">{{title }}</p>
+  <div style="margin-top: 30px;" id = "name-title">
+    <!-- <div>
+      <p id = "name">{{name}} </p>
+      <p style="margin-top: 20px;" id = "title">{{title }}</p>
+    </div> -->
+    <div id = "social-media">
+      <a href="//linkedin.com" target="_blank">
+          <img src="../assets/images/linkedin2.jpeg" width="32px" height="32">
+      </a>
+
+      <a href="//github.com" target="_blank">
+          <img src="../assets/images/github.jpeg" width="42px" height="32">
+      </a>
+      <!-- <a href="//facebook.com" target="_blank">
+        <img src="../assets/images/facebook2.jpeg" width="42px" height="42">
+    </a> -->
+  </div>
+
   </div>
   <button (click)="toggleMenu()" class="btn-menu" id="btn-menu" aria-label="Toggle Menu">
     <span class="button-content">
@@ -59,6 +74,7 @@
         </li>
       </ul>
     </nav>
+
   </header>
 
   <main [ngClass]="'mainWrapper'">
