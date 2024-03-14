@@ -34,12 +34,12 @@ header{
 	// grid-template-columns: 1;
     grid-template-rows: 55px 45px;
     width: 100%;
-    & #social-media{
+    & #home-media{
         grid-row: 1;
         background-color:white;
         display: flex;
         flex-direction: row;
-        justify-content: right;
+        justify-content: space-between;
         margin-right: 10px;
         & img:hover{
             transform: scale(1.03);

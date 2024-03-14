@@ -1,7 +1,12 @@
 <div [ngClass]="'bodyWrapper'">
 <header>
-  <!-- <div  id = "name-title"> -->
-    <div style="margin-top: 10px;"id = "social-media">
+  <div  id = "home-media">
+    <div style="margin-top:10px;margin-left:10px;" >
+      <a  href="/" target="_blank">
+        <img src="../assets/images/home.jpeg" width="32px" height="32">
+    </a>
+    </div>
+    <div style="margin-top: 10px;" id = "social-media">
       <a href="//linkedin.com" target="_blank">
           <img src="../assets/images/linkedin2.jpeg" width="32px" height="32">
       </a>
@@ -14,8 +19,8 @@
     </a> -->
   </div>
 
-  <!-- </div> -->
-  <button (click)="toggleMenu()" class="btn-menu" id="btn-menu" aria-label="Toggle Menu">
+  </div>
+  <button style="margin-left:10px;" (click)="toggleMenu()" class="btn-menu" id="btn-menu" aria-label="Toggle Menu">
     <span class="button-content">
       <span class="text">Menu</span>
       <span class="bar" id="bar"></span> 

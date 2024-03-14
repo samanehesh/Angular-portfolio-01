@@ -10,16 +10,15 @@
         <div *ngFor="let image of project?.image">
           <img 
           *ngIf="project?.image"
-          [src]="'assets/images/' + project?.image"
+          [src]="'assets/images/' + project?.image" 
           alt="Image of {{ project?.title }}"
         />
         </div>
 
         <div>
-          <p>{{ project?.title | uppercase }}</p>
-          <p>{{ project?.excerpt }}</p>
+          <p style="margin-top: 10px;text-align: center;">{{ project?.title | uppercase }}</p>
+          <p>{{ project?.excerpt }} </p>
           <p [innerHTML]="project?.body"></p>
-  
         </div>
     </section>
   

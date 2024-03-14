@@ -33,14 +33,26 @@ article{
 
 }
 img{
-    min-width: 100%;
-    width: 90%;
-    height: 50%;
-    overflow: hidden;
-    border-radius: 5px;
+    // min-width: 100%;
+    // width: 90%;
+    // // max-height: 400px;
+    // // object-position: top; /* Show the upper part of the image */
+
+    // // height: 30%;
+    // // overflow: hidden;
+    // border-radius: 5px;
+    // // object-fit: cover; /* Crop the image while preserving its aspect ratio */
+
     // height: 20%;
+    width: 30%; /* Adjust the percentage as needed */
+    max-width: 100%; /* Ensure the image doesn't exceed its original size */
+    height: auto; /* Maintain the aspect ratio */
+    border-radius: 5px; /* Optional: Add border-radius */
+    display: block; /* Ensure it's a block-level element */
+    margin-left: auto; /* Auto margin on the left */
+    margin-right: auto; /* Auto margin on the right */
 }
-footer{
+article footer{
     align-self: end; /* Aligns the item to the bottom */
     justify-self: start;
     & a{
@@ -51,11 +63,11 @@ footer{
         font-size:small;
         padding: 5px;
         color:white;
-    }
-    &:hover{
-        transform: scale(1.05);
+            &:hover{
         color: black;
     }
+    }
+
 }
 @media (min-width: 760px) {
     article{
