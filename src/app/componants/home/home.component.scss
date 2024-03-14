@@ -26,7 +26,7 @@
 }
 button{
     background-color: rgb(74, 74, 232);
-    border: 1px solid rgb(188, 166, 208);;
+    border: 1px solid rgb(188, 166, 208);
     border-radius: 3px;
     height: 35px;
     width: 60%;
@@ -35,6 +35,10 @@ button{
     color:white;
     margin-left: 90px;
     margin-top: 40px;
+    &:hover{
+        transform: scale(1.03);
+
+    }
 }
 @media (min-width: 760px) {
     #home-container{

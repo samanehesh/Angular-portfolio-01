@@ -6,12 +6,13 @@ import { Location } from '@angular/common';
 import { Project } from '../../model/project';
 import { ProjectService } from '../../services/project.service';
 import {Title} from '@angular/platform-browser'
+import { CarouselModule } from 'ngx-bootstrap/carousel';
 
 
 @Component({
   selector: 'app-project',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, CarouselModule],
   templateUrl: './project.component.html',
   styleUrl: './project.component.scss'
 })

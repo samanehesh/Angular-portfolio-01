@@ -32,6 +32,13 @@
             & h3{
                 margin-top: 5px;
                 margin-left: 20px; /* Adjust margin as needed */
+                &:hover{
+                    text-decoration:underline;
+                    font-size: large;                }
+            }
+            & img:hover{
+                transform: scale(1.05);
+
             }
         }
     }

@@ -1,19 +1,23 @@
+#project-container{
+    display: flex;
+    // align-items: center;
+    justify-content: center;
+}
 a {
     color: black; /* Set the desired default font color */
     text-decoration: none;
 }
 p{
-    
     font-family:  serif;
-    
 }
 article{
     border: 1px solid rgb(139, 136, 136);
     margin: 20px;
     padding: 10px;
+    width: 90%;
     border-radius: 5px;
     box-shadow: 14px 13px 10px rgb(21 21 21 / 10%);
-    height: 500px;
+    // min-height: 500px;
     // width: 200px;
     // text-align: center;
 }
@@ -21,16 +25,43 @@ article{
 .oneProject{
     display: grid;
     grid-template-columns: 1;
-    grid-template-rows: 3fr 1fr;
+    grid-template-rows: 1fr 60px;
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: space-around;
+    background-color:rgb(217, 213, 213);
+
 }
 img{
     min-width: 100%;
     width: 90%;
+    height: 50%;
+    overflow: hidden;
     border-radius: 5px;
     // height: 20%;
 }
 footer{
     align-self: end; /* Aligns the item to the bottom */
     justify-self: start;
+    & a{
+        // background-color: rgb(128, 128, 139);
+        // border: 1px solid rgb(188, 166, 208);;
+        border-radius: 3px;
+        height: 25px;
+        font-size:small;
+        padding: 5px;
+        color:white;
+    }
+    &:hover{
+        transform: scale(1.05);
+        color: black;
+    }
+}
+@media (min-width: 760px) {
+    article{
+        width: 40%;
+
+    }
+
 }
 

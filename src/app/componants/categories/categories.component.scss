@@ -1,6 +1,13 @@
 a {
     color: black; /* Set the desired default font color */
     text-decoration: none;
+
+    &:hover,
+    &:focus {
+        text-decoration:underline;
+        font-size: medium;
+        // transform: translateZ(1000px); /* Move the element forward by 10 pixels on hover */
+    }
 }
 p{
     font-style: italic;

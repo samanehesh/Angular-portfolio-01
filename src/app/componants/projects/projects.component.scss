@@ -67,6 +67,10 @@ p{
             padding: 5px;
             color:white;
         }
+        &:hover{
+            transform: scale(1.05);
+            color: black;
+        }
     }
     & #excerpt{
         display: none;
@@ -88,6 +92,10 @@ p{
         padding: 5px;
         margin-right: 2px;
         color: white;
+        &:hover{
+            color: black;
+
+        }
     }
 }
 
@@ -105,7 +113,7 @@ p{
     }
     .oneProject{
         grid-template-rows: 170px  1fr 1fr;
-        transition: transform 0.3s ease; /* Add a transition for the transform property */
+        // transition: transform 0.3s ease; /* Add a transition for the transform property */
         // perspective: 1000px; /* Set the perspective for the 3D effect */
         & #button-more-info{
             justify-self: right;
