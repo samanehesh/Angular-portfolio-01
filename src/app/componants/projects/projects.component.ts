@@ -1,11 +1,8 @@
 import { Component, Input, Output, EventEmitter, OnInit  } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ProjectFilterPipe } from '../../pipes/project-filter.pipe';
 import { ProjectService } from '../../services/project.service';
 import { Project } from '../../model/project';
-import { Category } from '../../model/category';
-import { Tag } from '../../model/tag';
-import { ActivatedRoute, NavigationEnd } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { RouterOutlet, RouterLink, RouterLinkActive } from '@angular/router';
 import { Router } from '@angular/router';
 import { CategoriesComponent } from '../categories/categories.component';
@@ -16,7 +13,7 @@ import {Title} from '@angular/platform-browser'
 @Component({
   selector: 'app-projects',
   standalone: true,
-  imports: [CommonModule, RouterOutlet,RouterLink, RouterLinkActive, ProjectFilterPipe, ProjectsComponent,CategoriesComponent,TagsComponent,ProjectComponent],
+  imports: [CommonModule, RouterOutlet,RouterLink, RouterLinkActive,CategoriesComponent,TagsComponent,ProjectComponent],
   templateUrl: './projects.component.html',
   styleUrl: './projects.component.scss'
 })

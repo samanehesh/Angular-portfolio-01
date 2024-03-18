@@ -1,47 +1,47 @@
 
 <div id = "project-container">
   <article class = "oneProject">
-    <section class="project-card">
-      <!-- <carousel>
+          <!-- <carousel>
         <slide *ngFor="let image of project?.image">
           <img [src]="'assets/images/' + image" alt="Image of {{ project?.title }}" style="display: block; width: 100%;">
         </slide>
       </carousel> -->
-        <div *ngFor="let image of project?.image">
-          <img 
-          *ngIf="project?.image"
-          [src]="'assets/images/' + project?.image" 
-          alt="Image of {{ project?.title }}"
-        />
-        </div>
-
+      <section *ngFor="let image of project?.image">
+        <img 
+        *ngIf="project?.image"
+        [src]="'assets/images/' + project?.image" 
+        alt="Image of {{ project?.title }}"
+      />
+      </section>
+      <section class="project-card">
         <div>
-          <p style="margin-top: 10px;text-align: center;">{{ project?.title | uppercase }}</p>
+          <p id = "title" style="text-align: center; ">{{ project?.title | uppercase }}</p>
           <p>{{ project?.excerpt }} </p>
           <p [innerHTML]="project?.body"></p>
         </div>
+        <footer>
+          <div *ngIf="project?.category && project?.category?.name">
+            <!-- Category:  -->
+            <a [ngStyle]="{'background-color': project?.category?.color}" href = 
+            "/projects/categories/{{project?.category?.slug}}"
+      
+          >
+          {{ project?.category?.name }}
+        </a>
+          </div>
+          <div style="margin-top: 10px;" *ngIf="project?.tags">
+            <!-- Tags: -->
+            <span style="margin-right: 3px;"*ngFor="let tag of project?.tags">
+              <a [ngStyle]="{'background-color': tag.color}"href =  "/projects/tags/{{tag.slug}}"
+            >
+            {{ tag.name }}
+          </a>
+            </span>
+          </div>
+        </footer>
     </section>
   
-    <footer>
-      <div *ngIf="project?.category && project?.category?.name">
-        <!-- Category:  -->
-        <a [ngStyle]="{'background-color': project?.category?.color}" href = 
-        "/projects/categories/{{project?.category?.slug}}"
-  
-      >
-      {{ project?.category?.name }}
-    </a>
-      </div>
-      <div style="margin-top: 10px;" *ngIf="project?.tags">
-        <!-- Tags: -->
-        <span style="margin-right: 3px;"*ngFor="let tag of project?.tags">
-          <a [ngStyle]="{'background-color': tag.color}"href =  "/projects/tags/{{tag.slug}}"
-        >
-        {{ tag.name }}
-      </a>
-        </span>
-      </div>
-    </footer>
+
   </article>
 </div>
 

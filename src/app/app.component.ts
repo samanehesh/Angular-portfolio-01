@@ -1,4 +1,4 @@
-import { Component} from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet, RouterLink, RouterLinkActive } from '@angular/router';
 import { Router } from '@angular/router';
@@ -26,14 +26,27 @@ export class AppComponent {
   toggleMenu() {
     console.log("menuuuuuuuuuuuuuu")
     const body = document.body;
-    console.log("body", body)
+    // const body = document.getElementById('bodyWrapper');
+
+    // console.log("body", body)
+    const btn = document.getElementById('btn-menu');
 
     const nav = document.getElementById('main-navigation');
     console.log("nav", nav)
+    btn?.classList.toggle('show');
 
-    body.classList.toggle('show');
-    nav?.classList.toggle('activated');
+    body?.classList.toggle('show');
+    nav?.classList.toggle('show');
   }
+  @HostListener('window:resize', ['$event'])
+  onResize(event: any) {
+    const body = document.body;
+    const nav = document.getElementById('main-navigation');
+    if (window.innerWidth >= 760) {
+      body.classList.remove('show');
+      nav?.classList.remove('activated');
+    }
+}
 
 }
 

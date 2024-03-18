@@ -8,7 +8,6 @@
     grid-template-columns: 1;
 }
 a {
-     /* Set the desired default font color */
     text-decoration: none;
 }
 p{
@@ -46,14 +45,19 @@ p{
     text-align: right;
     width: 130px;
     height: 100vh;
+    &:hover{
+        margin-right: 20px;
+    }
   }
 
 .oneProject{
     display: grid;
     grid-template-columns: 1;
     grid-template-rows: 1fr 1fr 1fr;
-    background-color:rgb(217, 213, 213);
+    // background-color:rgb(217, 213, 213);
     // background-color:rgb(231, 229, 229);
+    background-color:rgb(248, 247, 247);
+
     & #button-more-info{
         grid-row: 2;
         justify-self: center;
@@ -66,11 +70,11 @@ p{
             font-size:small;
             padding: 5px;
             color:white;
+            &:hover{
+                color: black;
+            }
         }
-        &:hover{
-            transform: scale(1.05);
-            color: black;
-        }
+
     }
     & #excerpt{
         display: none;

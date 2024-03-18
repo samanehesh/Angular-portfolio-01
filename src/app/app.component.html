@@ -1,4 +1,4 @@
-<div [ngClass]="'bodyWrapper'">
+<div [ngClass]="'bodyWrapper'" id = "bodyWrapper">
 <header>
   <div  id = "home-media">
     <div style="margin-top:10px;margin-left:10px;" >
@@ -16,11 +16,11 @@
       </a>
       <!-- <a href="//facebook.com" target="_blank">
         <img src="../assets/images/facebook2.jpeg" width="42px" height="42">
-    </a> -->
-  </div>
+      </a> -->
+    </div>
 
   </div>
-  <button style="margin-left:10px;" (click)="toggleMenu()" class="btn-menu" id="btn-menu" aria-label="Toggle Menu">
+  <button style="margin:10px;" (click)="toggleMenu()" class="btn-menu" id="btn-menu" aria-label="Toggle Menu">
     <span class="button-content">
       <span class="text">Menu</span>
       <span class="bar" id="bar"></span> 

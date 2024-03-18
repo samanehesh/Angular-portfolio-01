@@ -14,7 +14,7 @@ export class HomeComponent {
   constructor(private titleService : Title,  private router: Router ) {
     this.titleService.setTitle("Home")
   }
-  title = 'Software Developer in Trainee';
+  title = 'Software Developer in Training';
   name = 'Samaneh Heshmatzadeh';
   Explore(){
     this.router.navigate(['/about']); // Navigate to the /about route
