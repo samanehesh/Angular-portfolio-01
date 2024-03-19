@@ -16,4 +16,5 @@ export interface Project {
     'updated_at': string;
     'category': Category | null;
     'tags': Tag[] | undefined;
+    'repo' : string | null;
 }

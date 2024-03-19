@@ -1,7 +1,9 @@
 import { Component, Renderer2 } from '@angular/core';
 import {Title} from '@angular/platform-browser';
-import { MatExpansionModule } from '@angular/material/expansion';
+// import { MatExpansionModule } from '@angular/material/expansion';
 import { AccordionModule } from 'ngx-bootstrap/accordion';
+// import { CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
+
 
 
 @Component({
@@ -10,8 +12,9 @@ import { AccordionModule } from 'ngx-bootstrap/accordion';
   imports: [
     AccordionModule
   ],
-    templateUrl: './resume.component.html',
-  styleUrl: './resume.component.scss'
+  templateUrl: './resume.component.html',
+  styleUrl: './resume.component.scss',
+  // schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class ResumeComponent {
   constructor(private titleService : Title, private renderer: Renderer2) {

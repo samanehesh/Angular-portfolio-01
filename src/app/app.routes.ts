@@ -8,6 +8,7 @@ import {AboutComponent} from './componants/about/about.component'
 import {ContactComponent} from './componants/contact/contact.component'
 import {HomeComponent} from './componants/home/home.component'
 import {ResumeComponent} from './componants/resume/resume.component'
+import {GitHubComponent} from './componants/git-hub/git-hub.component'
 
 
 export const routes: Routes = [
@@ -24,6 +25,8 @@ export const routes: Routes = [
     { path: 'about', component: AboutComponent, pathMatch: 'full' },
     { path: 'contact', component: ContactComponent, pathMatch: 'full' },
     { path: 'resume', component: ResumeComponent, pathMatch: 'full' },
+    { path: 'github', component: GitHubComponent, pathMatch: 'full' },
+
 
 
 

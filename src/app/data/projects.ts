@@ -20,7 +20,9 @@ export const PROJECTS: Project[] = [
       "tags": [
         {"id":5,"name":"React","slug":"react","color": "DeepPink" },
         {"id":3,"name":"CSS","slug":"css","color": "Purple"}
-      ]
+      ],
+      "repo": null,
+
     },
     {
       "id": 2,
@@ -40,7 +42,8 @@ export const PROJECTS: Project[] = [
       "category": { "id": 2, "slug": "front-end", "name": "Front End","color": "Blue" },
       "tags": [
         {"id":9,"name":"Angular","slug":"angular","color": "Peru"},
-      ]
+      ],
+      "repo": null,
     },
     {
       "id": 3,
@@ -59,7 +62,8 @@ export const PROJECTS: Project[] = [
       "tags": [
         {"id":5,"name":"React","slug":"react","color": "DeepPink"},
         {"id":3,"name":"CSS","slug":"css","color": "Purple"}
-      ]
+      ],
+      "repo": null,
     },
     {
       "id": 4,
@@ -78,7 +82,8 @@ export const PROJECTS: Project[] = [
       "tags": [
         {"id":1,"name":"SQL","slug":"sql","color": "Orange"},
         {"id":7,"name":"C#","slug":"csharp","color": "Crimson"},
-      ]
+      ],
+      "repo": null,
     },
     {
       "id": 5,
@@ -98,7 +103,8 @@ export const PROJECTS: Project[] = [
         {"id":2,"name":"Javascript","slug":"javascript","color": "CornFlowerBlue"},
         {"id":3,"name":"CSS","slug":"css","color": "Purple"},
         {"id":6,"name":"HTML","slug":"html","color": "YellowGreen"}
-      ]
+      ],
+      "repo": null,
     },
     {
       "id": 6,
@@ -118,7 +124,8 @@ export const PROJECTS: Project[] = [
       "tags": [
         {"id":4,"name":"Node.js","slug":"nodejs","color": "Indigo"},
         {"id":8,"name":"Mongo","slug":"mongo","color": "Orchid"},
-      ]
+      ],
+      "repo": null,
     },
     {
       "id": 7,
@@ -137,7 +144,8 @@ export const PROJECTS: Project[] = [
       "tags": [
         {"id":1,"name":"SQL","slug":"sql","color": "Orange"},
         {"id":7,"name":"C#","slug":"csharp","color": "Crimson"},
-      ]
+      ],
+      "repo": null,
     },
     {
       "id": 8,
@@ -156,7 +164,8 @@ export const PROJECTS: Project[] = [
       "tags": [
         {"id":1,"name":"SQL","slug":"sql","color": "Orange"},
         {"id":7,"name":"C#","slug":"csharp","color": "Crimson"},
-      ]
+      ],
+      "repo": null,
     }
   ]
   

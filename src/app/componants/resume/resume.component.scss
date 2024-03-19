@@ -1,11 +1,20 @@
 #resume-container{
     display: flex;
     flex-direction: column;
-    justify-self: center;
-    margin-top: 18px;
+    text-align: center;
+    width: 80%;
+    margin: 18px auto 0px auto;
+    // border: 1px solid rgb(139, 136, 136);
+    padding: 10px;
+    border-radius: 5px;
+    // box-shadow: 14px 13px 10px rgb(21 21 21 / 10%);
+    min-height: 400px;
+    // font-weight: bold;
+
+    // font-weight: bold;
     & .download{
         display: flex;
-        align-items: center;
+        // align-items: center;
         justify-content: center;
     & button{
         background-color: rgb(74, 74, 232);
@@ -17,7 +26,6 @@
         color:white;
         &:hover{
             transform: scale(1.03);
-    
         }
     }
     }
