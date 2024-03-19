@@ -1,8 +1,9 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { Category } from '../../model/category';
 import { CategoryService } from '../../services/category.service';
+import {Title} from '@angular/platform-browser'
 
 @Component({
   selector: 'app-categories',
@@ -12,9 +13,11 @@ import { CategoryService } from '../../services/category.service';
   styleUrl: './categories.component.scss'
 })
 export class CategoriesComponent {
-  constructor(private categoryService: CategoryService) {}
+  constructor(private categoryService: CategoryService, private titleService : Title) {
+        this.titleService.setTitle("Categories");
 
-  // themes = THEMES;
+  }
+
   categories: Category[] = [];
   getCategories(): void {
     this.categories = this.categoryService.getCategories();
@@ -23,12 +26,5 @@ export class CategoriesComponent {
     this.getCategories();
   }
 
-  @Input() categoryFilter: Category | undefined;
-  @Output() newCategoryFilterEvent = new EventEmitter<Category>();
-  
-  setCategoryFilter(category: Category) {
-    this.categoryFilter = category;
-    this.newCategoryFilterEvent.emit(category);
-  }
 
 }

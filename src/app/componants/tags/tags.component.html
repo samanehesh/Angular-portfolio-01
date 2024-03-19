@@ -1,14 +1,9 @@
 <article id="tags">
-    <h3>Tags</h3>
-    <!-- <div *ngFor="let tag of tags" (click)="setTagFilter(tag)">
-      {{ tag.name }}
-    </div> -->
+    <p>Tags</p>
 
-    <!-- <div *ngFor="let tag of tags" [class.active]="tagFilter && tag.id == tagFilter.id"> -->
-
-    <div *ngFor="let tag of tags" [class.active]="tagFilter && tag.id == tagFilter.id">
-        <!-- <a href="#" (click)="setTagFilter(tag)">{{ tag.name }}</a> -->
-        <a href = 
+    <div *ngFor="let tag of tags" >
+        <a [ngStyle]="{'color': tag.color}" 
+        href = 
         "/projects/tags/{{tag.slug}}"
 
       >
@@ -17,6 +12,3 @@
       </div>
 </article>
 
-  <!-- <div *ngFor="let tag of tags" [class.active]="tagFilter && tag.id == tagFilter.id">
-    <a href="#" (click)="setTagFilter(tag)">{{ tag.name }}</a>
-  </div> -->

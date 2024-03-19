@@ -1,9 +1,33 @@
-<div [ngClass]="'bodyWrapper'">
+<div [ngClass]="'bodyWrapper'" id = "bodyWrapper">
 <header>
-  <div>
-    <h1>{{name}} {{title }}</h1>
+  <div  id = "home-media">
+    <div style="margin-top:10px;margin-left:10px;" >
+      <a  href="/" target="_blank">
+        <img src="../assets/images/home.jpeg" width="32px" height="32">
+    </a>
+    </div>
+    <div style="margin-top: 10px;" id = "social-media">
+      <a href="//linkedin.com" target="_blank">
+          <img src="../assets/images/linkedin2.jpeg" width="32px" height="32">
+      </a>
+
+      <a href="//github.com" target="_blank">
+          <img src="../assets/images/github.jpeg" width="42px" height="32">
+      </a>
+      <!-- <a href="//facebook.com" target="_blank">
+        <img src="../assets/images/facebook2.jpeg" width="42px" height="42">
+      </a> -->
+    </div>
+    <!-- <github-user-repos initial-username="samanehesh"></github-user-repos> -->
+
   </div>
-  <nav>
+  <button style="margin:10px;" (click)="toggleMenu()" class="btn-menu" id="btn-menu" aria-label="Toggle Menu">
+    <span class="button-content">
+      <span class="text">Menu</span>
+      <span class="bar" id="bar"></span> 
+    </span>
+  </button>
+  <nav id="main-navigation">
       <ul>
         <li>
           <a
@@ -12,6 +36,15 @@
             [routerLinkActiveOptions]="{ exact: true }"
             ariaCurrentWhenActive="page"
             >Home</a
+          >
+        </li>
+        <li>
+          <a
+            routerLink="/about"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            ariaCurrentWhenActive="page"
+            >About</a
           >
         </li>
         <li>
@@ -25,83 +58,69 @@
         </li>
         <li>
           <a
-            routerLink="projects/categories"
+            routerLink="/resume"
             routerLinkActive="active"
             [routerLinkActiveOptions]="{ exact: true }"
             ariaCurrentWhenActive="page"
-            >Categories</a
+            >Resume</a
           >
         </li>
         <li>
           <a
-            routerLink="projects/tags"
+            routerLink="/contact"
             routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
             ariaCurrentWhenActive="page"
-            >Tags</a
+            >Contact</a
+          >
+        </li>
+        <li>
+          <a
+            routerLink="/github"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            ariaCurrentWhenActive="page"
+            >Git</a
           >
         </li>
       </ul>
     </nav>
+
   </header>
 
   <main [ngClass]="'mainWrapper'">
-    <!-- <section *ngIf="!selectedProject">
-      <app-projects id = "projects"
-      [categoryFilter]="categoryFilter"
-      (newCategoryFilterEvent)="setCategoryFilter($event)"
-      [tagFilter]="tagFilter"
-      (newTagFilterEvent)="setTagFilter($event)"
-      (newSelectedProjectEvent)="setSelectedProject($event)">
-      </app-projects>
-    </section>
 
-    <section id="project" *ngIf="selectedProject">
-      <button (click)="clearSelectedProject()">Back</button>
-      <app-project [project]="selectedProject"></app-project>
-    </section> -->
     <router-outlet></router-outlet>
-
-  
-  <section id = "filters">
-    <article *ngIf="categoryFilter || tagFilter">
-      <p>Filter:</p>
-      <button (click)="clearFilters()">{{categoryFilter?.name || tagFilter?.name}} 🗑️</button>
-    </article>
-
-    <!-- <article>
-      <app-categories
-      [categoryFilter]="categoryFilter"
-      (newCategoryFilterEvent)="setCategoryFilter($event)"
-    ></app-categories>
-    </article> -->
-    <article>
-      <app-categories
-    ></app-categories>
-    </article>
-
-    <!-- <article>
-      <app-tags
-      [tagFilter]="tagFilter"
-      (newTagFilterEvent)="setTagFilter($event)"
-    ></app-tags>
-    </article> -->
-
-    <article>
-      <app-tags
-    ></app-tags>
-    </article>
-
-  </section>
-  
   </main>
 
-  <footer>
+  <footer >
     &copy; {{name}} - {{year}}
   </footer>
-  
-
 </div>
+<!-- <script>
+const body = document.body;
+const btnMenu = document.getElementById('btn-menu');
+const nav = document.getElementById('main-navigation');
 
+btnMenu.addEventListener('click', toggleMenu);
+
+function toggleMenu() {
+  body.classList.toggle('show');
+  nav.classList.toggle('activated');
+  console.log()
+}
+
+const mql = window.matchMedia('(min-width: 760px)');
+mql.addListener(removeTransition);
+
+function removeTransition(e) {
+  if (e.matches) {
+    body.classList.remove('show');
+    nav.classList.remove('activated');
+  }
+}
+
+</script> -->
 
 
 

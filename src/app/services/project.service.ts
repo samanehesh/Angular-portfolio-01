@@ -23,6 +23,10 @@ export class ProjectService {
     return PROJECTS.find((p) => p.id === id)!;
   }
 
+  getProjectBySlug(slug: string): Project {
+    return PROJECTS.find((p) => p.slug === slug)!;
+  }
+
   getProjectsByCategory(slug: string): Observable<Project[]> {
     const projects = PROJECTS.filter(
       (project) => project.category?.slug === slug

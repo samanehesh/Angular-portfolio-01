@@ -1,0 +1,66 @@
+#home-container{
+    display: flex;
+    flex-direction: row;
+    background-image: url('../../../assets/images/ssd6.jpg');
+    background-position: center; /* Center the image */
+    height: 600px;
+
+    & img{
+        display: none;
+    }
+    
+    & #name{
+        font-size: 45px;
+        font-weight:bold;
+        margin-right: 50px;
+        margin-left: 90px;
+        margin-top: 50px;
+        line-height: 50px;
+    }
+    & #title{
+        font-size: 20px;
+        font-style: italic;
+        margin-left: 90px;
+    }
+}
+button{
+    background-color: rgb(74, 74, 232);
+    border: 1px solid rgb(188, 166, 208);
+    border-radius: 3px;
+    height: 35px;
+    width: 60%;
+    font-size:small;
+    padding: 5px;
+    color:white;
+    margin-left: 90px;
+    margin-top: 40px;
+    &:hover{
+        transform: scale(1.03);
+
+    }
+}
+@media (min-width: 760px) {
+    #home-container{
+        background-image: none;
+        display: grid;
+        grid-template-columns: 2;
+        height: 600px;
+        & #name{
+            margin-top: 150px;
+        }
+        & :nth-child(1){
+            grid-column: 1;
+
+        }
+        & :nth-child(2){
+            grid-column: 2;
+            & img{
+                display: block;
+            }
+
+        }
+    }
+
+}
+
+

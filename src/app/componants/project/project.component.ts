@@ -1,26 +1,31 @@
-import { Component,Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 
 import { Project } from '../../model/project';
 import { ProjectService } from '../../services/project.service';
+import {Title} from '@angular/platform-browser'
+import { CarouselModule } from 'ngx-bootstrap/carousel';
 
 
 @Component({
   selector: 'app-project',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, CarouselModule],
   templateUrl: './project.component.html',
   styleUrl: './project.component.scss'
 })
-export class ProjectComponent {
+export class ProjectComponent implements OnInit{
   constructor(
     private route: ActivatedRoute,
     private projectService: ProjectService,
-    private location: Location
-  ) {}
-  // @Input() project?: Project;
+    private location: Location,
+    private titleService : Title
+  ) {
+    // this.titleService.setTitle(`Project-${this.project?.title}`);
+
+  }
   project?: Project;
 
   getProject(): void {
@@ -28,13 +33,17 @@ export class ProjectComponent {
     this.project = this.projectService.getProject(id);
   }
 
-  // call getMinifig() in the ngOnInit lifecycle hook
-  ngOnInit(): void {
-    this.getProject();
+  async getProjectBySlug(): Promise<void> {
+    const segment: string = this.route.snapshot.url[1]?.path;
+    this.project = await this.projectService.getProjectBySlug(segment);
   }
 
-  // add a goBack() method that uses the Location service to go back to the previous page
-  // this is better than a link because it will work even if the user navigates to this page from a different source
+  async ngOnInit(): Promise<void> {
+    await this.getProjectBySlug();
+    this.titleService.setTitle(`Project-${this.project?.title}`);
+  }
+
+
   goBack(): void {
     this.location.back();
   }

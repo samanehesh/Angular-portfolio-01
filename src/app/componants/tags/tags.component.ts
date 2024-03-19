@@ -1,8 +1,9 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component} from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { Tag } from '../../model/tag';
 import { TagService } from '../../services/tag.service';
+import {Title} from '@angular/platform-browser'
 
 @Component({
   selector: 'app-tags',
@@ -12,7 +13,10 @@ import { TagService } from '../../services/tag.service';
   styleUrl: './tags.component.scss'
 })
 export class TagsComponent {
-  constructor(private tagService: TagService) {}
+  constructor(private tagService: TagService, private titleService : Title) {
+    this.titleService.setTitle("Tags");
+
+  }
 
   tags: Tag[] = [];
   getTags(): void {
@@ -21,13 +25,5 @@ export class TagsComponent {
   ngOnInit(): void {
     this.getTags();
   }
-  @Input() tagFilter: Tag | undefined;
-  @Output() newTagFilterEvent = new EventEmitter<Tag>();
-
-  setTagFilter(tag: Tag) {
-    this.tagFilter = tag;
-    this.newTagFilterEvent.emit(tag);
-  }
-
 
 }

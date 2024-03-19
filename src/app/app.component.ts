@@ -1,58 +1,56 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
+// import { CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
+
 import { CommonModule } from '@angular/common';
-
-import { ProjectsComponent } from './componants/projects/projects.component';
-import { CategoriesComponent } from './componants/categories/categories.component';
-import { TagsComponent } from './componants/tags/tags.component';
-import { ProjectComponent } from './componants/project/project.component';
 import { RouterOutlet, RouterLink, RouterLinkActive } from '@angular/router';
+import { Router } from '@angular/router';
 
-
-import { Project } from './model/project';
-import { Category } from './model/category';
-import { Tag } from './model/tag';
-
-import {ProjectFilterPipe} from './pipes/project-filter.pipe'
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet,RouterLink, RouterLinkActive, ProjectFilterPipe, ProjectsComponent,CategoriesComponent,TagsComponent,ProjectComponent],
+  imports: [CommonModule, RouterOutlet,RouterLink, RouterLinkActive],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
+  // schemas: [CUSTOM_ELEMENTS_SCHEMA],
+
 })
 export class AppComponent {
-  title = 'Portfolio';
-  name = 'Samaneh';
+  constructor(
+    private router: Router,
+    private route: ActivatedRoute
+
+  ) {}
+
+  title = 'Software Developer';
+  name = 'Samaneh Heshmatzadeh';
   year = new Date().getFullYear();
 
-  categoryFilter : Category | undefined;
-  tagFilter: Tag |undefined
+  toggleMenu() {
+    console.log("menuuuuuuuuuuuuuu")
+    const body = document.body;
+    // const body = document.getElementById('bodyWrapper');
 
-  selectedProject?: Project;
-  setSelectedProject(project: Project) {
-    this.selectedProject = project;
-  }
+    // console.log("body", body)
+    const btn = document.getElementById('btn-menu');
 
-  clearSelectedProject() {
-    this.selectedProject = undefined;
-  }
-// this function set the category filter
-  setCategoryFilter(category: Category) {
-    this.categoryFilter = category;
-    this.tagFilter = undefined;
-  }
+    const nav = document.getElementById('main-navigation');
+    console.log("nav", nav)
+    btn?.classList.toggle('show');
 
-// this function set the tag filter
-  setTagFilter(tag: Tag) {
-    this.tagFilter = tag;
-    this.categoryFilter = undefined;
+    body?.classList.toggle('show');
+    nav?.classList.toggle('show');
   }
-
-// this function clears tag and category filter
-  clearFilters(){
-    this.categoryFilter = undefined;
-    this.tagFilter = undefined;
-  }
+  @HostListener('window:resize', ['$event'])
+  onResize(event: any) {
+    const body = document.body;
+    const nav = document.getElementById('main-navigation');
+    if (window.innerWidth >= 760) {
+      body.classList.remove('show');
+      nav?.classList.remove('activated');
+    }
+}
 
 }
+
