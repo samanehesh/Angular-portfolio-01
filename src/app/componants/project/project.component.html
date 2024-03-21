@@ -1,18 +1,25 @@
-
 <div id = "project-container">
+  <!-- <div>
+    <button type="button" (click)="goBack()">Back</button>
+  </div> -->
   <article class = "oneProject">
-          <!-- <carousel>
-        <slide *ngFor="let image of project?.image">
-          <img [src]="'assets/images/' + image" alt="Image of {{ project?.title }}" style="display: block; width: 100%;">
-        </slide>
-      </carousel> -->
-      <section *ngFor="let image of project?.image">
+    <ngb-carousel *ngIf="project && project.image && project.image.length > 0">
+      <ng-template ngFor let-image [ngForOf]="project.image">
+        <ng-template ngbSlide>
+          <div class="picsum-img-wrapper">
+            <img [src]="'assets/images/' + image" [alt]="'Image'" style="width: 10%; max-height: 70px;">
+          </div>
+        </ng-template>
+      </ng-template>
+    </ngb-carousel>
+
+      <!-- <section *ngFor="let image of project?.image">
         <img 
         *ngIf="project?.image"
         [src]="'assets/images/' + project?.image" 
         alt="Image of {{ project?.title }}"
       />
-      </section>
+      </section>  -->
       <section class="project-card">
         <div>
           <p id = "title" style="text-align: center; ">{{ project?.title | uppercase }}</p>
@@ -40,12 +47,40 @@
           </div>
         </footer>
     </section>
-  
-
   </article>
-</div>
+
+  <div>
+    <div>
+      <button type="button" (click)="goBack()">Back</button>
+    </div>
+    <div *ngIf="repo">
+      <button (click)="toggleRepo()">Toggle Repository</button>
+    </div>
+    
+    <div *ngIf="showRepo && repo">
+      <github-user-repos initial-username="samanehesh" initial-repo="GulpProject"></github-user-repos>
+      <!-- <github-user-repos initial-username="samanehesh" initial-repo="{{repo}}"></github-user-repos> -->
+    </div>
+    
+
+  </div>
 
 
-<div>
-  <button type="button" (click)="goBack()">Back</button>
 </div>
+
+<!-- <div>
+  <div *ngIf="repo">
+    <button (click)="toggleRepo()">Toggle Repository</button>
+  </div>
+  
+  <div *ngIf="showRepo && repo">
+    <github-user-repos initial-username="samanehesh" initial-repo="GulpProject"></github-user-repos>
+    <github-user-repos initial-username="samanehesh" initial-repo="{{repo}}"></github-user-repos>
+  </div>
+  
+  <div>
+    <button type="button" (click)="goBack()">Back</button>
+  </div>
+</div> -->
+
+

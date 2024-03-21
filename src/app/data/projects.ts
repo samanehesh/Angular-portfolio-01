@@ -11,7 +11,7 @@ export const PROJECTS: Project[] = [
       "url": null,
       "published_date": null,
       // "image": null,
-      "image"  : ["calculator.jpg"] ,   
+      "image"  : ["calculator.jpg", "calculator.jpg"] ,   
       "thumb": null,
       "category_id": 2,
       "created_at": "2023-02-23T22:31:23.000000Z",
@@ -33,7 +33,7 @@ export const PROJECTS: Project[] = [
       "url": null,
       "published_date": null,
       // "image": ["ssd2.jpeg", "ssd3.jpeg", "ssd4.jpeg"],   
-      "image": ["ssd2.jpeg"],   
+      "image": ["ssd2.jpeg","calculator.jpg"],   
 
       "thumb": null,
       "category_id": 2,
@@ -43,7 +43,7 @@ export const PROJECTS: Project[] = [
       "tags": [
         {"id":9,"name":"Angular","slug":"angular","color": "Peru"},
       ],
-      "repo": null,
+      "repo": "GulpProject",
     },
     {
       "id": 3,
