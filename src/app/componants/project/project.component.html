@@ -1,19 +1,27 @@
-
 <div id = "project-container">
-  <article class = "oneProject">
-          <!-- <carousel>
-        <slide *ngFor="let image of project?.image">
-          <img [src]="'assets/images/' + image" alt="Image of {{ project?.title }}" style="display: block; width: 100%;">
-        </slide>
-      </carousel> -->
-      <section *ngFor="let image of project?.image">
+  <!-- <div>
+    <button type="button" (click)="goBack()">Back</button>
+  </div> -->
+  <article>
+    <ngb-carousel id ="carousel" *ngIf="project && project.image && project.image.length > 0">
+      <ng-template ngFor let-image [ngForOf]="project.image">
+        <ng-template ngbSlide>
+          <div class="picsum-img-wrapper carousel-img-wrapper">
+            <img [src]="'assets/images/' + image" [alt]="'Image'" class="carousel-img">
+          </div>
+        </ng-template>
+      </ng-template>
+    </ngb-carousel>
+
+      <!-- <section *ngFor="let image of project?.image">
         <img 
         *ngIf="project?.image"
         [src]="'assets/images/' + project?.image" 
         alt="Image of {{ project?.title }}"
       />
-      </section>
+      </section>  -->
       <section class="project-card">
+        <hr>
         <div>
           <p id = "title" style="text-align: center; ">{{ project?.title | uppercase }}</p>
           <p>{{ project?.excerpt }} </p>
@@ -40,12 +48,28 @@
           </div>
         </footer>
     </section>
-  
-
   </article>
+
+  <div>
+    <div>
+      <button type="button" (click)="goBack()">Back</button>
+    </div>
+    <div *ngIf="repo">
+      <button (click)="toggleRepo()">Toggle Repository  {{repo}}</button>
+    </div>
+    
+    <div *ngIf="showRepo && repo" >
+      {{repo}}
+      <github-user-repos initial-username="samanehesh" initial-repo="DeckMaster"></github-user-repos>
+      <!-- <github-user-repos initial-username="samanehesh" initial-repo="{{repo.toString()}}"></github-user-repos> -->
+    </div>
+    
+
+  </div>
+
+
 </div>
 
 
-<div>
-  <button type="button" (click)="goBack()">Back</button>
-</div>
+
+

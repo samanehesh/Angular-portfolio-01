@@ -10,7 +10,7 @@
         padding: 10px;
         border-radius: 5px;
         box-shadow: 14px 13px 10px rgb(21 21 21 / 10%);
-        height: 135px;
+        min-height: 135px;
     }
     & #social-media{
         width: 80%;
@@ -23,14 +23,13 @@
         & a{
             color:black;
             text-decoration: none;
-
         }
         & .inline {
             display: flex;
             flex-direction: row;
             // align-items: center; /* Align items vertically */
             & h3{
-                margin-top: 5px;
+                // margin-top: 12px;
                 margin-left: 20px; /* Adjust margin as needed */
                 &:hover{
                     text-decoration:underline;

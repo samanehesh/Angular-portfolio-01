@@ -5,7 +5,7 @@
 }
 #allProjects{
     display: grid;
-    grid-template-columns: 1;
+    grid-template-columns: 1fr;
 }
 a {
     text-decoration: none;
@@ -33,6 +33,7 @@ p{
     border-radius: 5px;
     box-shadow: 14px 13px 10px rgba(136, 135, 135, 0.1);
     min-height: 50px;
+    height: 200px;
 
 }
 #filters{
@@ -110,6 +111,8 @@ p{
         grid-template-columns: repeat(2, 1fr);
     & article{
         height: 280px;
+        // max-height: 200px;
+
     }
     }
     #exsection{

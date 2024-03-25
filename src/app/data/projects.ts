@@ -11,7 +11,7 @@ export const PROJECTS: Project[] = [
       "url": null,
       "published_date": null,
       // "image": null,
-      "image"  : ["calculator.jpg"] ,   
+      "image"  : ["calculator5.jpg","calculator6.jpg"] ,   
       "thumb": null,
       "category_id": 2,
       "created_at": "2023-02-23T22:31:23.000000Z",
@@ -33,7 +33,7 @@ export const PROJECTS: Project[] = [
       "url": null,
       "published_date": null,
       // "image": ["ssd2.jpeg", "ssd3.jpeg", "ssd4.jpeg"],   
-      "image": ["ssd2.jpeg"],   
+      "image": ["ssd2.jpeg","calculator.jpg"],   
 
       "thumb": null,
       "category_id": 2,
@@ -42,8 +42,10 @@ export const PROJECTS: Project[] = [
       "category": { "id": 2, "slug": "front-end", "name": "Front End","color": "Blue" },
       "tags": [
         {"id":9,"name":"Angular","slug":"angular","color": "Peru"},
+        { "id": 9, "name": "SASS", "slug": "sass", "color": "red" },
+
       ],
-      "repo": null,
+      "repo": "GulpProject",
     },
     {
       "id": 3,
@@ -73,7 +75,7 @@ export const PROJECTS: Project[] = [
       "body": "Explore a diverse menu of tantalizing flavors, customize desired blend, and indulge in a seamless ordering experience as the SQL database ensures accurate and efficient processing of the Bubble Tea preferences, bringing a taste of innovation to customers.</p>",
       "url": null,
       "published_date": null,
-      "image": null,
+      "image": ["sips-home.jpg","sips-menu.jpg","sips-menudetail.jpg","sips-modal.jpg","sips-admin.jpg","sips-product.jpg","sips-code.jpg"],
       "thumb": null,
       "category_id": 2,
       "created_at": "2023-02-23T22:31:23.000000Z",
@@ -127,6 +129,27 @@ export const PROJECTS: Project[] = [
       ],
       "repo": null,
     },
+
+    {
+      "id": 10,
+      "title": "DeckMaster",
+      "slug": "deckmaster",
+      "excerpt": "Experience the world of Bubble Tea like never before with our captivating website, meticulously crafted using C# and SQL.",
+      "body": "Explore a diverse menu of tantalizing flavors, customize desired blend, and indulge in a seamless ordering experience as the SQL database ensures accurate and efficient processing of the Bubble Tea preferences, bringing a taste of innovation to customers.</p>",
+      "url": null,
+      "published_date": null,
+      "image": ["deck-home.jpg","deck-shop.jpg","deck-shop2.jpg","deck-roles.jpg","deck-users.jpg","deck-paypall.jpg","deck-confirmation.jpg","deck-transactions.jpg","deck-code.jpg"],
+      "thumb": null,
+      "category_id": 2,
+      "created_at": "2023-02-23T22:31:23.000000Z",
+      "updated_at": "2023-02-23T22:31:23.000000Z",
+      "category":   { "id": 3, "slug": "full-stack", "name": "Full Stack","color": "Green"},
+      "tags": [
+        {"id":7,"name":"C#","slug":"csharp","color": "Crimson"},
+      ],
+      "repo": "DeckMaster",
+    },
+
     {
       "id": 7,
       "title": "Car Ownership Database ",
