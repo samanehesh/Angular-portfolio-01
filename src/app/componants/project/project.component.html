@@ -2,12 +2,12 @@
   <!-- <div>
     <button type="button" (click)="goBack()">Back</button>
   </div> -->
-  <article class = "oneProject">
-    <ngb-carousel *ngIf="project && project.image && project.image.length > 0">
+  <article>
+    <ngb-carousel id ="carousel" *ngIf="project && project.image && project.image.length > 0">
       <ng-template ngFor let-image [ngForOf]="project.image">
         <ng-template ngbSlide>
-          <div class="picsum-img-wrapper">
-            <img [src]="'assets/images/' + image" [alt]="'Image'" style="width: 10%; max-height: 70px;">
+          <div class="picsum-img-wrapper carousel-img-wrapper">
+            <img [src]="'assets/images/' + image" [alt]="'Image'" class="carousel-img">
           </div>
         </ng-template>
       </ng-template>
@@ -21,6 +21,7 @@
       />
       </section>  -->
       <section class="project-card">
+        <hr>
         <div>
           <p id = "title" style="text-align: center; ">{{ project?.title | uppercase }}</p>
           <p>{{ project?.excerpt }} </p>
@@ -54,12 +55,13 @@
       <button type="button" (click)="goBack()">Back</button>
     </div>
     <div *ngIf="repo">
-      <button (click)="toggleRepo()">Toggle Repository</button>
+      <button (click)="toggleRepo()">Toggle Repository  {{repo}}</button>
     </div>
     
-    <div *ngIf="showRepo && repo">
-      <github-user-repos initial-username="samanehesh" initial-repo="GulpProject"></github-user-repos>
-      <!-- <github-user-repos initial-username="samanehesh" initial-repo="{{repo}}"></github-user-repos> -->
+    <div *ngIf="showRepo && repo" >
+      {{repo}}
+      <github-user-repos initial-username="samanehesh" initial-repo="DeckMaster"></github-user-repos>
+      <!-- <github-user-repos initial-username="samanehesh" initial-repo="{{repo.toString()}}"></github-user-repos> -->
     </div>
     
 
@@ -68,19 +70,6 @@
 
 </div>
 
-<!-- <div>
-  <div *ngIf="repo">
-    <button (click)="toggleRepo()">Toggle Repository</button>
-  </div>
-  
-  <div *ngIf="showRepo && repo">
-    <github-user-repos initial-username="samanehesh" initial-repo="GulpProject"></github-user-repos>
-    <github-user-repos initial-username="samanehesh" initial-repo="{{repo}}"></github-user-repos>
-  </div>
-  
-  <div>
-    <button type="button" (click)="goBack()">Back</button>
-  </div>
-</div> -->
+
 
 

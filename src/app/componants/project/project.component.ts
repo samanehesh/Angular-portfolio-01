@@ -44,7 +44,7 @@ export class ProjectComponent implements OnInit{
     const segment: string = this.route.snapshot.url[1]?.path;
     this.project = await this.projectService.getProjectBySlug(segment);
     this.repo = this.project.repo;
-    console.log(this.repo, "repoooooooooooo")
+    // console.log(this.repo, "repoooooooooooo")
 
   }
 

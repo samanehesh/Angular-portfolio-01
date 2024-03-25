@@ -31,6 +31,7 @@
       <ul>
         <li>
           <a
+          (click)="toggleNav()"
             routerLink="/"
             routerLinkActive="active"
             [routerLinkActiveOptions]="{ exact: true }"
@@ -40,6 +41,8 @@
         </li>
         <li>
           <a
+          (click)="toggleNav()"
+
             routerLink="/about"
             routerLinkActive="active"
             [routerLinkActiveOptions]="{ exact: true }"
@@ -49,6 +52,8 @@
         </li>
         <li>
           <a
+          (click)="toggleNav()"
+
             routerLink="/projects"
             routerLinkActive="active"
             [routerLinkActiveOptions]="{ exact: true }"
@@ -58,6 +63,8 @@
         </li>
         <li>
           <a
+          (click)="toggleNav()"
+
             routerLink="/resume"
             routerLinkActive="active"
             [routerLinkActiveOptions]="{ exact: true }"
@@ -67,6 +74,8 @@
         </li>
         <li>
           <a
+          (click)="toggleNav()"
+
             routerLink="/contact"
             routerLinkActive="active"
             [routerLinkActiveOptions]="{ exact: true }"
@@ -74,7 +83,7 @@
             >Contact</a
           >
         </li>
-        <li>
+        <!-- <li>
           <a
             routerLink="/github"
             routerLinkActive="active"
@@ -82,7 +91,7 @@
             ariaCurrentWhenActive="page"
             >Git</a
           >
-        </li>
+        </li> -->
       </ul>
     </nav>
 
