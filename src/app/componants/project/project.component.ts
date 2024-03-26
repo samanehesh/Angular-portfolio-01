@@ -8,6 +8,8 @@ import { ProjectService } from '../../services/project.service';
 import {Title} from '@angular/platform-browser'
 import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
 import { CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
+import { ChangeDetectorRef } from '@angular/core';
+
 
 
 @Component({
@@ -23,7 +25,9 @@ export class ProjectComponent implements OnInit{
     private route: ActivatedRoute,
     private projectService: ProjectService,
     private location: Location,
-    private titleService : Title
+    private titleService : Title, 
+    private cdr: ChangeDetectorRef
+
   ) {
 
   }
@@ -44,13 +48,13 @@ export class ProjectComponent implements OnInit{
     const segment: string = this.route.snapshot.url[1]?.path;
     this.project = await this.projectService.getProjectBySlug(segment);
     this.repo = this.project.repo;
-    // console.log(this.repo, "repoooooooooooo")
-
   }
 
   async ngOnInit(): Promise<void> {
     await this.getProjectBySlug();
     this.titleService.setTitle(`Project-${this.project?.title}`);
+    this.repo = this.project?.repo;
+    this.cdr.detectChanges(); // Trigger change detection
   }
 
   goBack(): void {

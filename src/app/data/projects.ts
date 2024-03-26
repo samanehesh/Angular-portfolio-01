@@ -53,9 +53,9 @@ export const PROJECTS: Project[] = [
       "slug": "react-movie-mania",
       "excerpt": "Exploring Movies with TMDB and Unleashing the Magic of React for an Immersive and Enchanting Movie Experience.",
       "body": "Movie project is created with React and Redux. Established the Redux store, the states are available globally and action efficiently. Axios is integrated to Fetch and facilitate API requests to TMDB and populate the Redux store. React Router is implemented for navigation between different movie views while ensuring a cohesive flow within the application. Visual aesthetics is enhanced the with CSS styles.</p>",
-      "url": null,
+      "url": "http://heshmatzadeh.online/",
       "published_date": null,
-      "image": null,
+      "image": ["movie-home.jpg","movie-about.jpg","movie-favorite.jpg","movie-watch.jpg","movie-code.jpg",],
       "thumb": null,
       "category_id": 2,
       "created_at": "2023-02-23T22:31:23.000000Z",
@@ -65,7 +65,7 @@ export const PROJECTS: Project[] = [
         {"id":5,"name":"React","slug":"react","color": "DeepPink"},
         {"id":3,"name":"CSS","slug":"css","color": "Purple"}
       ],
-      "repo": null,
+      "repo": "movie",
     },
     {
       "id": 4,
@@ -131,7 +131,7 @@ export const PROJECTS: Project[] = [
     },
 
     {
-      "id": 10,
+      "id": 9,
       "title": "DeckMaster",
       "slug": "deckmaster",
       "excerpt": "Experience the world of Bubble Tea like never before with our captivating website, meticulously crafted using C# and SQL.",
@@ -140,7 +140,7 @@ export const PROJECTS: Project[] = [
       "published_date": null,
       "image": ["deck-home.jpg","deck-shop.jpg","deck-shop2.jpg","deck-roles.jpg","deck-users.jpg","deck-paypall.jpg","deck-confirmation.jpg","deck-transactions.jpg","deck-code.jpg"],
       "thumb": null,
-      "category_id": 2,
+      "category_id": 3,
       "created_at": "2023-02-23T22:31:23.000000Z",
       "updated_at": "2023-02-23T22:31:23.000000Z",
       "category":   { "id": 3, "slug": "full-stack", "name": "Full Stack","color": "Green"},
@@ -148,6 +148,26 @@ export const PROJECTS: Project[] = [
         {"id":7,"name":"C#","slug":"csharp","color": "Crimson"},
       ],
       "repo": "DeckMaster",
+    },
+    {
+      "id": 10,
+      "title": "Responsive Webpage",
+      "slug": "responsive-cuisine-website",
+      "excerpt" : "",
+      "body": "",
+      "url": null,
+      "published_date": null,
+      "image": ["food-desktop3.jpg","food-tablet-large.jpg","food-phone-large.jpg"],
+      "thumb": null,
+      "category_id": 2,
+      "created_at": "2023-02-23T22:31:23.000000Z",
+      "updated_at": "2023-02-23T22:31:23.000000Z",
+      "category": { "id": 2, "slug": "front-end", "name": "Front End","color": "Blue"},
+      "tags": [
+        {"id":3,"name":"CSS","slug":"css","color": "Purple"},
+        {"id":6,"name":"HTML","slug":"html","color": "YellowGreen"}
+      ],
+      "repo": "GulpProject",
     },
 
     {

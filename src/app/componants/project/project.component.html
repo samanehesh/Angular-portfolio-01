@@ -24,12 +24,18 @@
         <hr>
         <div>
           <p id = "title" style="text-align: center; ">{{ project?.title | uppercase }}</p>
-          <p>{{ project?.excerpt }} </p>
-          <p [innerHTML]="project?.body"></p>
+          <p *ngIf="project?.excerpt">{{ project?.excerpt }} </p>
+          <p *ngIf="project?.body" [innerHTML]="project?.body"></p>
+          <p  *ngIf="project?.url"  style="font-weight: bold;">Project URL: <a class="url" [href]="project?.url" target="_blank" style="margin-right: 100px;">{{ project?.url }}</a></p>
+          <p  *ngIf="project?.repo" style="font-weight: bold;">      
+            <a class="url" [href]="'https://github.com/samanehesh/' + project?.repo + '.git'" target="_blank">
+            <img src="../assets/images/github2.jpg" width="30px" height="28">
+            </a> :
+            <a class="url" [href]="'https://github.com/samanehesh/' + project?.repo + '.git'" target="_blank" style="margin-right: 100px;">{{ project?.repo }}</a>
+          </p>
         </div>
         <footer>
           <div *ngIf="project?.category && project?.category?.name">
-            <!-- Category:  -->
             <a [ngStyle]="{'background-color': project?.category?.color}" href = 
             "/projects/categories/{{project?.category?.slug}}"
       
@@ -55,13 +61,15 @@
       <button type="button" (click)="goBack()">Back</button>
     </div>
     <div *ngIf="repo">
-      <button (click)="toggleRepo()">Toggle Repository  {{repo}}</button>
+      <button (click)="toggleRepo()">Toggle Repository</button>
     </div>
     
     <div *ngIf="showRepo && repo" >
-      {{repo}}
-      <github-user-repos initial-username="samanehesh" initial-repo="DeckMaster"></github-user-repos>
+      {{repo.toString()}}
+      <!-- <github-user-repos initial-username="samanehesh" initial-repo="DeckMaster"></github-user-repos> -->
       <!-- <github-user-repos initial-username="samanehesh" initial-repo="{{repo.toString()}}"></github-user-repos> -->
+
+      <github-user-repos initial-username="samanehesh" [initial-repo]="'repo'"></github-user-repos>
     </div>
     
 
