@@ -99,6 +99,8 @@ button{
 .carousel-control-next {
     background-color: red; /* Change this to your desired color */
 }
+
+
 @media (min-width: 760px) {
     #project-container {
         animation: moveFromTop 1s ease forwards;
@@ -116,7 +118,7 @@ button{
     }
     #title{
         font-weight: bolder;
-        font-size: 25px;
+        font-size: 20px;
         margin: 20px;
     }
     article{
@@ -135,6 +137,11 @@ button{
             // background-color:rgb(217, 213, 213);
             padding: 20px;
         }
+    }
+
+    .p-exerpt,
+    .p-body{
+        text-indent: 30px;
     }
 
 

@@ -6,6 +6,7 @@
 #allProjects{
     display: grid;
     grid-template-columns: 1fr;
+    grid-auto-rows: minmax(100px, min-content); /* Set minimum height for rows */
 }
 a {
     text-decoration: none;
@@ -50,13 +51,9 @@ p{
     padding-right: 10px;
     border-radius:5px ;
     text-align: right;
-    width: 130px;
+    width: 140px;
     height: 100vh;
-    &:hover {
-        transform: scale(1.03);
-        // transform: translateZ(1000px); /* Move the element forward by 10 pixels on hover */
-    }
-  }
+}
 
 .oneProject{
     display: grid;
@@ -86,7 +83,6 @@ p{
                 color: black;
             }
         }
-
     }
     & #excerpt{
         display: none;
@@ -118,7 +114,8 @@ p{
 
 @media (min-width: 760px) {
     #filters:hover{
-            margin-right: 20px;
+        margin-right: 20px;
+        transform: scale(1.03);
     }
     #allProjects{
         display: grid;

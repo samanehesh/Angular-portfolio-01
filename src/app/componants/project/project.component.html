@@ -24,10 +24,10 @@
         <hr>
         <div>
           <p id = "title" style="text-align: center; ">{{ project?.title | uppercase }}</p>
-          <p *ngIf="project?.excerpt">{{ project?.excerpt }} </p>
-          <p *ngIf="project?.body" [innerHTML]="project?.body"></p>
-          <p  *ngIf="project?.url"  style="font-weight: bold;">Project URL: <a class="url" [href]="project?.url" target="_blank" style="margin-right: 100px;">{{ project?.url }}</a></p>
-          <p  *ngIf="project?.repo" style="font-weight: bold;">      
+          <!-- <p class = "p-exerpt" *ngIf="project?.excerpt">{{ project?.excerpt }} </p> -->
+          <p class = "p-body" *ngIf="project?.body" [innerHTML]="project?.body"></p>
+          <p *ngIf="project?.url"  style="font-weight: bold;">Project URL: <a class="url" [href]="project?.url" target="_blank" style="margin-right: 100px;">{{ project?.url }}</a></p>
+          <p *ngIf="project?.repo" style="font-weight: bold;">      
             <a class="url" [href]="'https://github.com/samanehesh/' + project?.repo + '.git'" target="_blank">
             <img src="../assets/images/github2.jpg" width="30px" height="28">
             </a> :
@@ -56,17 +56,17 @@
     </section>
   </article>
 
-  <div>
+  <!-- <div> -->
     <div>
       <button type="button" (click)="goBack()">Back</button>
     </div>
-    <div *ngIf="repo">
+    <!-- <div *ngIf="repo">
       <button (click)="toggleRepo()">Toggle Repository</button>
-    </div>
+    </div> -->
     
-    <div *ngIf="showRepo && repo" >
+    <!-- <div *ngIf="showRepo && repo" >
       <div #repoContainer></div>
-      <div>hello</div>
+      <div>hello</div> -->
       <!-- <p>Repository: <span id="repoPlaceholder"></span></p> -->
 
       
@@ -74,10 +74,10 @@
       <!-- <github-user-repos initial-username="samanehesh" initial-repo="{{repo.toString()}}"></github-user-repos> -->
 
       <!-- <github-user-repos initial-username="samanehesh" [initial-repo]="'repo'"></github-user-repos> -->
-    </div>
+    <!-- </div> -->
 
 
-  </div>
+  <!-- </div> -->
 
 
 </div>

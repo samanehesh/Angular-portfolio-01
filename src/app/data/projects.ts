@@ -7,10 +7,9 @@ export const PROJECTS: Project[] = [
       "title": "React Calculator",
       "slug": "react-calculator",
       "excerpt": "React Calculator where math meets React for seamless and user-friendly numerical computations.",
-      "body": "<strong>React Calculator</strong> is interactive user interface for performing mathematical calculations. Integrating state management within React, a calculator project can efficiently handle user input, update display elements, and execute precise mathematical operations.",
+      "body": "React Calculator is interactive user interface for performing mathematical calculations. Integrating <strong>state management</strong> within React, a calculator project can efficiently handle user input, update display elements, and execute precise mathematical operations.",
       "url": null,
       "published_date": null,
-      // "image": null,
       "image"  : ["calculator5.jpg","calculator6.jpg"] ,   
       "thumb": null,
       "category_id": 2,
@@ -21,7 +20,7 @@ export const PROJECTS: Project[] = [
         {"id":5,"name":"React","slug":"react","color": "DeepPink" },
         {"id":3,"name":"CSS","slug":"css","color": "Purple"}
       ],
-      "repo": null,
+      "repo": "Calculator",
 
     },
     {
@@ -29,8 +28,8 @@ export const PROJECTS: Project[] = [
       "title": "SSD Yearbook",
       "slug": "ssd-yearbook",
       "excerpt": "Embarking on an immersive Angular, SSD Yearbook serves as a centralized showcase for projects accomplished within the software development program.",
-      "body": "The SSD Yearbook serves as a dynamic portfolio with filtering functionality, which offers a detailed overview of each project's objectives, technologies used, and notable achievements.",
-      "url": null,
+      "body": "The SSD Yearbook is an innovative project crafted using <strong>Angular</strong>, a powerful front-end framework. It serves as a dynamic portfolio, meticulously designed to showcase a collection of projects undertaken by the Software Systems Development team (SSD). One of the standout features of the SSD Yearbook is its sophisticated <strong>filtering functionality</strong>, seamlessly integrated using Angular's capabilities. This functionality allows users to effortlessly navigate through the projects, refining their search based on technologies used.",
+      "url": "http://heshmatzadeh.xyz/",
       "published_date": null,
       "image": ["ssd-home.jpg","ssd-info.jpg","ssd-about.jpg","ssd-resume.jpg","ssd-contact.jpg"],   
       "thumb": null,
@@ -40,7 +39,7 @@ export const PROJECTS: Project[] = [
       "category": { "id": 2, "slug": "front-end", "name": "Front End","color": "Blue" },
       "tags": [
         {"id":9,"name":"Angular","slug":"angular","color": "Peru"},
-        { "id": 9, "name": "SASS", "slug": "sass", "color": "red" },
+        { "id": 9, "name": "SASS", "slug": "sass", "color": "Orangered" },
 
       ],
       "repo": "Angular-portfolio-01",
@@ -48,9 +47,9 @@ export const PROJECTS: Project[] = [
     {
       "id": 3,
       "title": "Movie Mania",
-      "slug": "react-movie-mania",
+      "slug": "movie-mania",
       "excerpt": "Exploring Movies with TMDB and Unleashing the Magic of React for an Immersive and Enchanting Movie Experience.",
-      "body": "Movie project is created with React and Redux. Established the Redux store, the states are available globally and action efficiently. Axios is integrated to Fetch and facilitate API requests to TMDB and populate the Redux store. React Router is implemented for navigation between different movie views while ensuring a cohesive flow within the application. Visual aesthetics is enhanced the with CSS styles.</p>",
+      "body": "Movie project is created with <strong>React</strong> and <strong>Redux</strong>. Established the <strong>Redux store</strong>, the states are available globally and action efficiently. <strong>Axios</strong> is integrated to Fetch and facilitate API requests to TMDB and populate the Redux store. <strong>React Router</strong> is implemented for navigation between different movie views while ensuring a cohesive flow within the application. Visual aesthetics is enhanced the with <strong>CASS</strong> styles.</p>",
       "url": "http://heshmatzadeh.online/",
       "published_date": null,
       "image": ["movie-home.jpg","movie-about.jpg","movie-favorite.jpg","movie-watch.jpg","movie-code.jpg",],
@@ -61,7 +60,7 @@ export const PROJECTS: Project[] = [
       "category": { "id": 2, "slug": "front-end", "name": "Front End","color": "Blue"},
       "tags": [
         {"id":5,"name":"React","slug":"react","color": "DeepPink"},
-        {"id":3,"name":"CSS","slug":"css","color": "Purple"}
+        { "id": 9, "name": "SASS", "slug": "sass", "color": "Orangered" },
       ],
       "repo": "movie",
     },
@@ -70,7 +69,7 @@ export const PROJECTS: Project[] = [
       "title": "Bubble Tea Website",
       "slug": "bubble-tea-website",
       "excerpt": "Experience the world of Bubble Tea like never before with our captivating website, meticulously crafted using C# and SQL.",
-      "body": "Explore a diverse menu of tantalizing flavors, customize desired blend, and indulge in a seamless ordering experience as the SQL database ensures accurate and efficient processing of the Bubble Tea preferences, bringing a taste of innovation to customers.</p>",
+      "body": "Experience a seamless Bubble Tea ordering process with our innovative system developed in <strong>C#</strong> using <strong>MVC architecture</strong>. The MVC design ensures efficient data management, intuitive user interfaces, and streamlined interactions. With <strong>SQL</strong> database integration for precise order handling and <strong>PayPal</strong> for secure payments, our system offers a convenient and enjoyable way to explore and indulge in your favorite Bubble Tea flavors.",
       "url": null,
       "published_date": null,
       "image": ["sips-home.jpg","sips-menu.jpg","sips-menudetail.jpg","sips-modal.jpg","sips-admin.jpg","sips-product.jpg","sips-code.jpg"],
@@ -83,28 +82,29 @@ export const PROJECTS: Project[] = [
         {"id":1,"name":"SQL","slug":"sql","color": "Orange"},
         {"id":7,"name":"C#","slug":"csharp","color": "Crimson"},
       ],
-      "repo": null,
+      "repo": "my-sips",
     },
+
     {
       "id": 5,
       "title": "JavaScript Game",
       "slug": "javascript-game",
-      "excerpt": "Explore Hi-Low game with the use of Javascript and predict whether the next randomly generated number will be higher or lower.",
-      "body": "The Hi-Low World game is a one or two player game with three difficulty range (Easy 1-1024, Medium 1-2048, Hard 1-4096). The objective of this game is to guess a secret number in as few guesses as possible. The secret number is generated within the predefined range by computer in one player mode or entered by the other player.</p>",
+      "excerpt": "Experience the world of Bubble Tea like never before with our captivating website, meticulously crafted using C# and SQL.",
+      "body": "Experience a seamless Bubble Tea ordering process with our innovative system developed in <strong>C#</strong> using <strong>MVC architecture</strong>. The MVC design ensures efficient data management, intuitive user interfaces, and streamlined interactions. With <strong>SQL</strong> database integration for precise order handling and <strong>PayPal</strong> for secure payments, our system offers a convenient and enjoyable way to explore and indulge in your favorite Bubble Tea flavors.",
       "url": null,
       "published_date": null,
-      "image": null,
+      "image": ["hi-low-home.jpg","hi-low-home.jpg","hi-low-hard.jpg", "hi-low-guess.jpg", "hi-low-win.jpg","hi-low-modal.jpg"],
       "thumb": null,
       "category_id": 2,
       "created_at": "2023-02-23T22:31:23.000000Z",
       "updated_at": "2023-02-23T22:31:23.000000Z",
-      "category": { "id": 2, "slug": "front-end", "name": "Front End","color": "Blue"},
+      "category":   { "id": 3, "slug": "full-stack", "name": "Full Stack","color": "Green"},
       "tags": [
         {"id":2,"name":"Javascript","slug":"javascript","color": "CornFlowerBlue"},
         {"id":3,"name":"CSS","slug":"css","color": "Purple"},
         {"id":6,"name":"HTML","slug":"html","color": "YellowGreen"}
       ],
-      "repo": null,
+      "repo": "hi-low-game",
     },
     {
       "id": 6,
@@ -145,7 +145,7 @@ export const PROJECTS: Project[] = [
       "tags": [
         {"id":7,"name":"C#","slug":"csharp","color": "Crimson"},
       ],
-      "repo": "<github-user-repos initial-username=\"samanehesh\" initial-repo=\"DeckMaster\"></github-user-repos>",
+      "repo": "DeckMaster",
       
     },
     {
