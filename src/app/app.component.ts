@@ -60,7 +60,6 @@ export class AppComponent {
   }
   @HostListener('window:resize', ['$event'])
   onResize(event: any) {
-    console.log(event,"eventeeeeeeeeeee")
     const body = document.body;
     const nav = document.getElementById('main-navigation');
     if (window.innerWidth >= 760) {

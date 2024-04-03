@@ -65,13 +65,17 @@
     </div>
     
     <div *ngIf="showRepo && repo" >
-      {{repo.toString()}}
+      <div #repoContainer></div>
+      <div>hello</div>
+      <!-- <p>Repository: <span id="repoPlaceholder"></span></p> -->
+
+      
       <!-- <github-user-repos initial-username="samanehesh" initial-repo="DeckMaster"></github-user-repos> -->
       <!-- <github-user-repos initial-username="samanehesh" initial-repo="{{repo.toString()}}"></github-user-repos> -->
 
-      <github-user-repos initial-username="samanehesh" [initial-repo]="'repo'"></github-user-repos>
+      <!-- <github-user-repos initial-username="samanehesh" [initial-repo]="'repo'"></github-user-repos> -->
     </div>
-    
+
 
   </div>
 

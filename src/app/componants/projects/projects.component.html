@@ -3,9 +3,11 @@
 
     <!-- <article class="oneProject" *ngFor="let project of projects" [style.background-image]="project?.image?.[0] ? 'url(assets/images/' + project?.image?.[0] + ')' : ''"> -->
     <article class="oneProject" *ngFor="let project of projects">
-
+      <section id = "img">
+        <img [src]="'assets/images/' + project?.image?.[0]" [alt]="'Image'" style="height: 100px;width: 90%;"> 
+      </section>
       <section style="margin-top: 15px;" id = "exsection">
-        <!-- <img [src]="'assets/images/' + project?.image?.[0]" [alt]="'Image'" style="height: 100px;width: 90%;">  -->
+        <hr>
         <p style="margin-bottom: 20px;"id = "title">{{ project.title | uppercase }}</p>
         <p id ="excerpt" >{{ project.excerpt }}</p>
       </section>
