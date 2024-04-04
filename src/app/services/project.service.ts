@@ -29,8 +29,7 @@ export class ProjectService {
 
   getProjectsByCategory(slug: string): Observable<Project[]> {
     const projects = PROJECTS.filter(
-      (project) => project.category?.slug === slug
-    )!;
+      (project) => project.category?.slug === slug)!;
     return of(projects);
   }
 
@@ -45,6 +44,20 @@ export class ProjectService {
     }
 
     return of(filteredProjects);
+  }
+
+
+  getProjectsBySearch(search: string): Observable<Project[]> {
+    const searchTermLower = search.toLowerCase();
+
+    const projects = PROJECTS.filter(
+      (project) => project?.body?.toLowerCase().includes(searchTermLower) || 
+                   project?.excerpt?.toLowerCase().includes(searchTermLower) || 
+                   project?.title?.toLowerCase().includes(searchTermLower) ||
+                   project?.category?.name.toLowerCase().includes(searchTermLower) ||
+                   project?.tags?.some(tag => tag.name.toLowerCase().includes(searchTermLower))
+    );
+    return of(projects);
   }
 
 }

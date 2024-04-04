@@ -57,7 +57,6 @@ export class AppComponent {
     const btn = document.getElementById('btn-menu');
 
     const nav = document.getElementById('main-navigation');
-    console.log("nav", nav)
     if (window.innerWidth <= 760) {
 
     btn?.classList.toggle('show');

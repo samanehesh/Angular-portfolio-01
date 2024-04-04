@@ -42,15 +42,16 @@ export class ProjectComponent implements OnInit {
 
   async getProjectBySlug(): Promise<void> {
     const segment: string = this.route.snapshot.url[1]?.path;
-    this.project = await this.projectService.getProjectBySlug(segment);
-    this.repo = this.project.repo;
-
+    if(segment !== "search"){
+      this.project = await this.projectService.getProjectBySlug(segment);
+      this.repo = this.project.repo;
+    }
   }
 
   async ngOnInit(): Promise<void> {
     await this.getProjectBySlug();
     this.titleService.setTitle(`Project-${this.project?.title}`);
-    this.repo = this.project?.repo;
+    // this.repo = this.project?.repo;
   }
   // ngAfterViewInit(): void {
   //   this.renderRepoComponent();

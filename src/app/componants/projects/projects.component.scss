@@ -8,8 +8,44 @@
 #allProjects{
     display: grid;
     grid-template-columns: 1fr;
-    grid-auto-rows: minmax(100px, min-content); /* Set minimum height for rows */
+    grid-auto-rows: minmax(20px, min-content); /* Set minimum height for rows */
 }
+
+#search-div{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+    & input{
+        margin-bottom: 10px;
+        margin-right: 5px;
+        margin-top: 5px;
+
+    }
+
+    & #button-search, #button-back{
+        margin-right: 5px;
+        margin-bottom: 5px;
+        justify-self: center;
+        align-self: center;
+        & a{
+            background-color: rgb(128, 128, 139);
+            border: 1px solid rgb(188, 166, 208);;
+            border-radius: 3px;
+            height: 25px;
+            font-size:small;
+            padding: 5px;
+            color:white;
+            &:hover{
+                color: black;
+            }
+        }
+    }
+    
+}
+.message {
+    width: 100%; /* Make the message div occupy the entire width */
+    margin-top: 10px; /* Add some margin for spacing */
+  }
 a {
     text-decoration: none;
 }
@@ -36,7 +72,6 @@ p{
     border-radius: 5px;
     box-shadow: 14px 13px 10px rgba(136, 135, 135, 0.1);
     min-height: 200px;
-    // width: auto;
     & #img{
         display: none;
     }
@@ -129,6 +164,9 @@ p{
     #allProjects{
         display: grid;
         grid-template-columns: repeat(2, 1fr);
+        & > :nth-child(1) {
+            grid-column: span 2; /* This will make the element cover two columns */
+        }
     & article{
         height: 400px;
         & #img{
@@ -147,8 +185,7 @@ p{
     }
     .oneProject{
         grid-template-rows:80px 170px  1fr 1fr;
-        // transition: transform 0.3s ease; /* Add a transition for the transform property */
-        // perspective: 1000px; /* Set the perspective for the 3D effect */
+
 
         & #button-more-info{
             justify-self: right;
@@ -156,7 +193,6 @@ p{
         }
         &:hover {
             transform: scale(1.03);
-            // transform: translateZ(1000px); /* Move the element forward by 10 pixels on hover */
         }
         & #excerpt{
             display: block;
@@ -167,5 +203,8 @@ p{
 @media (min-width: 1000px) {
     #allProjects{
         grid-template-columns: repeat(3, 1fr);
+        & > :nth-child(1) {
+            grid-column: span 3; /* This will make the element cover two columns */
+        }
     }
 }
