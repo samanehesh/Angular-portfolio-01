@@ -10,6 +10,6 @@ export const TAGS: Tag[] = [
   { "id": 7, "name": "C#", "slug": "csharp", "color": "Crimson" },
   { "id": 8, "name": "Mongo", "slug": "mongo", "color": "Orchid" },
   { "id": 9, "name": "Angular", "slug": "angular", "color": "Peru" },
-  { "id": 9, "name": "SASS", "slug": "sass", "color": "Orangered" },
+  { "id": 9, "name": "SASS", "slug": "sass", "color": "Orangered" }
 
 ];

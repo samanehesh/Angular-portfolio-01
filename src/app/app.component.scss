@@ -23,10 +23,6 @@ P{
    height: 100vh;
    display: grid;
    grid-template-rows: 3;
-//    &.show{
-//     transition: height 1s ease, visibility 0s 0.3s;
-
-// }s
     & >main{
         grid-row: 2;
 
@@ -35,8 +31,10 @@ P{
     & >footer{
         grid-row: 3;
         align-self: self-end;
-        margin: 5px;
+        text-align: end;
         justify-self: right;
+        width: 100%;
+        padding: 10px;
     }
 }
 //header**************************************
@@ -63,10 +61,6 @@ header{
     }
 }
 
-// #btn-menu{
-//     grid-row: 2;
-
-// }
 
 nav {
     grid-row: 3;
@@ -98,7 +92,6 @@ nav {
         &:hover
         {
         outline: none;
-        // background-color: red;
         color: white;
         }
     }
@@ -118,7 +111,7 @@ nav {
 
 @media (min-width: 760px) {
     #bodyWrapper{
-        grid-template-rows: 100px 1fr 40px;
+        grid-template-rows: 100px 1fr 100px;
     
      }
 

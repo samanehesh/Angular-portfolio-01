@@ -1,7 +1,6 @@
 <div id = "project-Page-Wrapper">
   <section id = "allProjects">
 
-    <!-- <article class="oneProject" *ngFor="let project of projects" [style.background-image]="project?.image?.[0] ? 'url(assets/images/' + project?.image?.[0] + ')' : ''"> -->
     <article class="oneProject" *ngFor="let project of projects">
       <section id = "img">
         <img [src]="'assets/images/' + project?.image?.[0]" [alt]="'Image'" style="height: 100px;width: 90%;"> 
@@ -23,7 +22,7 @@
             {{ project.category.name }}
           </a>
         </div>
-        <div *ngIf="project.tags && project.tags.length > 0">
+        <div id = "projects-tag" *ngIf="project.tags && project.tags.length > 0">
           <!-- Tags: -->
           <span *ngFor="let tag of project.tags" >
 

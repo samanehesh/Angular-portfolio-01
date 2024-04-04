@@ -28,7 +28,6 @@ export class AppComponent {
   year = new Date().getFullYear();
 
   toggleMenu() {
-    console.log("menuuuuuuuuuuuuuu")
     const body = document.body;
     // const body = document.getElementById('bodyWrapper');
 

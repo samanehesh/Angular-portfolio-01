@@ -102,7 +102,7 @@ export const PROJECTS: Project[] = [
       "tags": [
         {"id":2,"name":"Javascript","slug":"javascript","color": "CornFlowerBlue"},
         {"id":3,"name":"CSS","slug":"css","color": "Purple"},
-        {"id":6,"name":"HTML","slug":"html","color": "YellowGreen"}
+        {"id":6,"name":"HTML","slug":"html","color": "YellowGreen"},
       ],
       "repo": "hi-low-game",
     },
