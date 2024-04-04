@@ -208,8 +208,8 @@ nav {
         z-index: 1000; /* Ensure the header stays on top */
         /* Add other styles as needed */
     }
-    #mainWrapper,
-    #mainWrapper.nav-open {
+    #mainWrapper
+    {
         padding-top: 10px; /* Adjust padding-top when nav is open */
     }
   

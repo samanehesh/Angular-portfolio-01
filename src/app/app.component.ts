@@ -29,8 +29,9 @@ export class AppComponent {
 
   toggleMenu() {
     const mainWrapper = document.getElementById('mainWrapper');
-    mainWrapper?.classList.toggle('nav-open');
-    const body = document.body;
+    if (window.innerWidth <= 760) {
+      mainWrapper?.classList.toggle('nav-open');}
+          const body = document.body;
     // const body = document.getElementById('bodyWrapper');
 
     // console.log("body", body)
@@ -38,25 +39,31 @@ export class AppComponent {
 
     const nav = document.getElementById('main-navigation');
     console.log("nav", nav)
+    if (window.innerWidth <= 760) {
+
     btn?.classList.toggle('show');
 
     body?.classList.toggle('show');
-    nav?.classList.toggle('show');
+    nav?.classList.toggle('show');}
   }
 
   toggleNav() {
     const mainWrapper = document.getElementById('mainWrapper');
+    if (window.innerWidth <= 760) {
     mainWrapper?.classList.toggle('nav-open');
+  }
     const body = document.body;
 
     const btn = document.getElementById('btn-menu');
 
     const nav = document.getElementById('main-navigation');
     console.log("nav", nav)
+    if (window.innerWidth <= 760) {
+
     btn?.classList.toggle('show');
 
     body?.classList.toggle('show');
-    nav?.classList.remove('show');
+    nav?.classList.remove('show');}
   }
   @HostListener('window:resize', ['$event'])
   onResize(event: any) {
@@ -69,8 +76,6 @@ export class AppComponent {
       nav?.classList.remove('show');
       btn?.classList.remove('show');
       mainWrapper?.classList.remove('nav-open');
-
-
     }
 }
 
