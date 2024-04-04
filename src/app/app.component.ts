@@ -28,6 +28,8 @@ export class AppComponent {
   year = new Date().getFullYear();
 
   toggleMenu() {
+    const mainWrapper = document.getElementById('mainWrapper');
+    mainWrapper?.classList.toggle('nav-open');
     const body = document.body;
     // const body = document.getElementById('bodyWrapper');
 
@@ -43,11 +45,10 @@ export class AppComponent {
   }
 
   toggleNav() {
-    console.log("menuuuuuuuuuuuuuu")
+    const mainWrapper = document.getElementById('mainWrapper');
+    mainWrapper?.classList.toggle('nav-open');
     const body = document.body;
-    // const body = document.getElementById('bodyWrapper');
 
-    // console.log("body", body)
     const btn = document.getElementById('btn-menu');
 
     const nav = document.getElementById('main-navigation');
@@ -60,10 +61,16 @@ export class AppComponent {
   @HostListener('window:resize', ['$event'])
   onResize(event: any) {
     const body = document.body;
+    const btn = document.getElementById('btn-menu');
+    const mainWrapper = document.getElementById('mainWrapper');
     const nav = document.getElementById('main-navigation');
     if (window.innerWidth >= 760) {
       body.classList.remove('show');
       nav?.classList.remove('show');
+      btn?.classList.remove('show');
+      mainWrapper?.classList.remove('nav-open');
+
+
     }
 }
 
