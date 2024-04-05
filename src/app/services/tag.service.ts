@@ -9,6 +9,5 @@ export class TagService {
 
   constructor() { }
   getTags(): Tag[] {
-    return TAGS;
-  }
+    return TAGS.sort((a, b) => a.name.length - b.name.length);  }
 }

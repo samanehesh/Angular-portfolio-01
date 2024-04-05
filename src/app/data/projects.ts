@@ -17,7 +17,7 @@ export const PROJECTS: Project[] = [
       "updated_at": "2023-02-23T22:31:23.000000Z",
       "category": { "id": 2, "slug": "front-end", "name": "Front End", "color": "Blue" },
       "tags": [
-        {"id":5,"name":"React","slug":"react","color": "DeepPink" },
+        {"id":5,"name":"React","slug":"react","color": "DarkCyan" },
         {"id":3,"name":"CSS","slug":"css","color": "Purple"}
       ],
       "repo": "Calculator",
@@ -59,7 +59,7 @@ export const PROJECTS: Project[] = [
       "updated_at": "2023-02-23T22:31:23.000000Z",
       "category": { "id": 2, "slug": "front-end", "name": "Front End","color": "Blue"},
       "tags": [
-        {"id":5,"name":"React","slug":"react","color": "DeepPink"},
+        {"id":5,"name":"React","slug":"react","color": "DarkCyan"},
         { "id": 9, "name": "SASS", "slug": "sass", "color": "Orangered" },
       ],
       "repo": "movie",
@@ -98,7 +98,7 @@ export const PROJECTS: Project[] = [
       "category_id": 2,
       "created_at": "2023-02-23T22:31:23.000000Z",
       "updated_at": "2023-02-23T22:31:23.000000Z",
-      "category":   { "id": 3, "slug": "full-stack", "name": "Full Stack","color": "Green"},
+      "category": { "id": 2, "slug": "front-end", "name": "Front End","color": "Blue"},
       "tags": [
         {"id":2,"name":"Javascript","slug":"javascript","color": "CornFlowerBlue"},
         {"id":3,"name":"CSS","slug":"css","color": "Purple"},
@@ -233,7 +233,7 @@ export const PROJECTS: Project[] = [
     },
 
     {
-      "id": 11,
+      "id": 12,
       "title": "Country Cards",
       "slug": "country-cards",
       "excerpt": "Coming soon",

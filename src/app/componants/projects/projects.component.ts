@@ -43,14 +43,19 @@ export class ProjectsComponent implements OnInit {
       .subscribe((projects) => {
         // Sort projects based on category name
         projects.sort((a, b) => {
-          if (a?.title < b?.title) {
+          // Use optional chaining to safely access category names
+          const categoryNameA = a.category?.name || '';
+          const categoryNameB = b.category?.name || '';
+  
+          if (categoryNameA > categoryNameB) {
             return -1;
           }
-          if (a.title> b.title) {
+          if (categoryNameA < categoryNameB) {
             return 1;
           }
           return 0;
         });
+  
 
         this.projects = projects;
       });
