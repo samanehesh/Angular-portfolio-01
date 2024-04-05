@@ -7,18 +7,15 @@
     </a>
     </div>
     <div style="margin-top: 10px;" id = "social-media">
-      <a href="//linkedin.com" target="_blank">
+      <a href="//linkedin.com/in/sama-heshmatzadeh/" target="_blank">
           <img src="../assets/images/linkedin2.jpeg" width="32px" height="32">
       </a>
 
-      <a href="//github.com" target="_blank">
+      <a href="//github.com/samanehesh/" target="_blank">
           <img src="../assets/images/github.jpeg" width="42px" height="32">
       </a>
-      <!-- <a href="//facebook.com" target="_blank">
-        <img src="../assets/images/facebook2.jpeg" width="42px" height="42">
-      </a> -->
+
     </div>
-    <!-- <github-user-repos initial-username="samanehesh"></github-user-repos> -->
 
   </div>
   <button style="margin:10px;" (click)="toggleMenu()" class="btn-menu" id="btn-menu" aria-label="Toggle Menu">
@@ -83,21 +80,13 @@
             >Contact</a
           >
         </li>
-        <!-- <li>
-          <a
-            routerLink="/github"
-            routerLinkActive="active"
-            [routerLinkActiveOptions]="{ exact: true }"
-            ariaCurrentWhenActive="page"
-            >Git</a
-          >
-        </li> -->
+
       </ul>
     </nav>
 
   </header>
 
-  <main [ngClass]="'mainWrapper'">
+  <main [ngClass]="'mainWrapper'" id = "mainWrapper">
 
     <router-outlet></router-outlet>
   </main>

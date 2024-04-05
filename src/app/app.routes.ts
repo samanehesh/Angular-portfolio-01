@@ -18,9 +18,12 @@ export const routes: Routes = [
     { path: 'projects/tags', component: TagsComponent, pathMatch: 'full' },
     { path: 'projects/categories', component: CategoriesComponent, pathMatch: 'full' },
 
-    { path: 'projects/:slug', component: ProjectComponent },
-    { path: 'projects/categories/:slug', component: ProjectsComponent },
-    { path: 'projects/tags/:slug', component: ProjectsComponent },
+    { path: 'projects/:slug', component: ProjectComponent, pathMatch: 'full' },
+
+    { path: 'projects/categories/:slug', component: ProjectsComponent, pathMatch: 'full' },
+    { path: 'projects/tags/:slug', component: ProjectsComponent, pathMatch: 'full' },
+    { path: 'projects/search/:searchTerm', component: ProjectsComponent,pathMatch: 'full' },
+
     
     { path: 'about', component: AboutComponent, pathMatch: 'full' },
     { path: 'contact', component: ContactComponent, pathMatch: 'full' },

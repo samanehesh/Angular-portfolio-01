@@ -1,8 +1,29 @@
 <div id = "project-Page-Wrapper">
   <section id = "allProjects">
 
-    <article class = "oneProject" *ngFor="let project of projects">
+    <div id = "search-div">
+      <input type="text" [(ngModel)]="searchTerm" placeholder="Search Projects">
+      <section id = "button-search">
+        <ng-container *ngIf="searchTerm; else noSearchTerm">
+          <a [routerLink]="'/projects/search/' + searchTerm">Search</a>
+        </ng-container>
+        <ng-template #noSearchTerm>
+          <a href="/projects">Search</a>
+        </ng-template>
+      </section>
+      <section id = "button-back">
+        <a href ="/projects">Back</a>
+      </section>
+      <div class="message">{{noProjectsMessage}}</div>
+
+    </div>
+
+    <article class="oneProject" *ngFor="let project of projects">
+      <section id = "img">
+        <img [src]="'assets/images/' + project?.image?.[0]" [alt]="'Image'" style="height: 100px;width: 90%;"> 
+      </section>
       <section style="margin-top: 15px;" id = "exsection">
+        <hr>
         <p style="margin-bottom: 20px;"id = "title">{{ project.title | uppercase }}</p>
         <p id ="excerpt" >{{ project.excerpt }}</p>
       </section>
@@ -18,7 +39,7 @@
             {{ project.category.name }}
           </a>
         </div>
-        <div *ngIf="project.tags && project.tags.length > 0">
+        <div id = "projects-tag" *ngIf="project.tags && project.tags.length > 0">
           <!-- Tags: -->
           <span *ngFor="let tag of project.tags" >
 

@@ -28,8 +28,10 @@ export class AppComponent {
   year = new Date().getFullYear();
 
   toggleMenu() {
-    console.log("menuuuuuuuuuuuuuu")
-    const body = document.body;
+    const mainWrapper = document.getElementById('mainWrapper');
+    if (window.innerWidth <= 760) {
+      mainWrapper?.classList.toggle('nav-open');}
+          const body = document.body;
     // const body = document.getElementById('bodyWrapper');
 
     // console.log("body", body)
@@ -37,35 +39,42 @@ export class AppComponent {
 
     const nav = document.getElementById('main-navigation');
     console.log("nav", nav)
+    if (window.innerWidth <= 760) {
+
     btn?.classList.toggle('show');
 
     body?.classList.toggle('show');
-    nav?.classList.toggle('show');
+    nav?.classList.toggle('show');}
   }
 
   toggleNav() {
-    console.log("menuuuuuuuuuuuuuu")
+    const mainWrapper = document.getElementById('mainWrapper');
+    if (window.innerWidth <= 760) {
+    mainWrapper?.classList.toggle('nav-open');
+  }
     const body = document.body;
-    // const body = document.getElementById('bodyWrapper');
 
-    // console.log("body", body)
     const btn = document.getElementById('btn-menu');
 
     const nav = document.getElementById('main-navigation');
-    console.log("nav", nav)
+    if (window.innerWidth <= 760) {
+
     btn?.classList.toggle('show');
 
     body?.classList.toggle('show');
-    nav?.classList.remove('show');
+    nav?.classList.remove('show');}
   }
   @HostListener('window:resize', ['$event'])
   onResize(event: any) {
-    console.log(event,"eventeeeeeeeeeee")
     const body = document.body;
+    const btn = document.getElementById('btn-menu');
+    const mainWrapper = document.getElementById('mainWrapper');
     const nav = document.getElementById('main-navigation');
     if (window.innerWidth >= 760) {
       body.classList.remove('show');
       nav?.classList.remove('show');
+      btn?.classList.remove('show');
+      mainWrapper?.classList.remove('nav-open');
     }
 }
 

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef, ViewChild, AfterViewInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
@@ -9,7 +9,6 @@ import {Title} from '@angular/platform-browser'
 import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
 import { CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
 
-
 @Component({
   selector: 'app-project',
   standalone: true,
@@ -18,19 +17,20 @@ import { CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
   styleUrl: './project.component.scss',
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class ProjectComponent implements OnInit{
+// export class ProjectComponent implements OnInit, AfterViewInit {
+export class ProjectComponent implements OnInit {
+
   constructor(
     private route: ActivatedRoute,
     private projectService: ProjectService,
     private location: Location,
-    private titleService : Title
-  ) {
+    private titleService : Title, 
 
-  }
+  ) {}
   project?: Project;
   repo?: string | null;
-  userName = "samanehesh"
   showRepo: boolean = false; // Add boolean property to track visibility
+  // @ViewChild('repoContainer') repoContainer: ElementRef | undefined;
 
   
   getProject(): void {
@@ -42,16 +42,26 @@ export class ProjectComponent implements OnInit{
 
   async getProjectBySlug(): Promise<void> {
     const segment: string = this.route.snapshot.url[1]?.path;
-    this.project = await this.projectService.getProjectBySlug(segment);
-    this.repo = this.project.repo;
-    // console.log(this.repo, "repoooooooooooo")
-
+    if(segment !== "search"){
+      this.project = await this.projectService.getProjectBySlug(segment);
+      this.repo = this.project.repo;
+    }
   }
 
   async ngOnInit(): Promise<void> {
     await this.getProjectBySlug();
     this.titleService.setTitle(`Project-${this.project?.title}`);
+    // this.repo = this.project?.repo;
   }
+  // ngAfterViewInit(): void {
+  //   this.renderRepoComponent();
+  // }
+
+  // renderRepoComponent(): void {
+  //   if (this.repo && this.repoContainer) {
+  //     this.repoContainer.nativeElement.innerHTML = this.repo;
+  //   }
+  // }
 
   goBack(): void {
     this.location.back();
@@ -59,5 +69,4 @@ export class ProjectComponent implements OnInit{
   toggleRepo(): void {
     this.showRepo = !this.showRepo; // Toggle the boolean property
   }
-
 }
