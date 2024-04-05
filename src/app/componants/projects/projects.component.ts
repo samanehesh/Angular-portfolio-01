@@ -40,7 +40,20 @@ export class ProjectsComponent implements OnInit {
   getProjects(): void {
     this.projectService
       .getProjects()
-      .subscribe((projects) => (this.projects = projects));
+      .subscribe((projects) => {
+        // Sort projects based on category name
+        projects.sort((a, b) => {
+          if (a?.title < b?.title) {
+            return -1;
+          }
+          if (a.title> b.title) {
+            return 1;
+          }
+          return 0;
+        });
+
+        this.projects = projects;
+      });
       this.Urlsegment = "";
       this.slugSegment = "";
       this.searchTerm = ""

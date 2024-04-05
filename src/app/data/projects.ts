@@ -230,6 +230,28 @@ export const PROJECTS: Project[] = [
         {"id":7,"name":"C#","slug":"csharp","color": "Crimson"},
       ],
       "repo": null,
+    },
+
+    {
+      "id": 11,
+      "title": "Country Cards",
+      "slug": "country-cards",
+      "excerpt": "Coming soon",
+      "body": "Coming soon",
+      "url": null,
+      "published_date": null,
+      "image": ["comming.jpeg"],
+      "thumb": null,
+      "category_id": 3,
+      "created_at": "2023-02-23T22:31:23.000000Z",
+      "updated_at": "2023-02-23T22:31:23.000000Z",
+      "category": { "id": 3, "slug": "full-stack", "name": "Full Stack","color": "Green"},
+      "tags": [
+        { "id": 3, "name": "CSS", "slug": "css", "color": "Purple" },
+        { "id": 11, "name": "Typescript", "slug": "typescript", "color": "Maroon" },
+        { "id": 12, "name": "Postgres", "slug": "postgres", "color": "Olive" }
+      ],
+      "repo": null,
     }
   ]
   
